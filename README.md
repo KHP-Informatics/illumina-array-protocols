@@ -43,11 +43,16 @@ More details soon....
 
 **Running BWA**  
 
-```
+```bash
+###################################
+## BWA > samblaster > samtools
+# run on a 32 core machine 
+#
 bwa mem -t 32 -V -M -a ${refGenome} ${array}.fasta | \
-samblaster --addMateTags --excludeDups -i /dev/stdin | \
-samtools sort -@ 32 -T xx -O sam -o ${array}.sam
-samtools index ${array}.sam && rm ${array}.sam
+samblaster --addMateTags --excludeDups | \
+samtools sort -@ 32 -T xx -O sam -o ${array}.sam && \
+samtools index ${array}.sam && \
+rm ${array}.sam
 ```
 
 ### Illumina Array Annotations
