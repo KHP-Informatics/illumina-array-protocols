@@ -37,6 +37,8 @@ More details soon....
 - [mega_array_seq_sorted.bam](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam)
 - [mega_array_seq_sorted.bam.bai](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam.bai)
 
+**OMNI**  
+
 ## 2. Genomestudio 
 
 More details soon....
