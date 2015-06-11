@@ -1,8 +1,8 @@
 # illumina-array-protocols
-
 **Protocols/scripts for processing illumina SNP arrays**  
-
 **VERSION: v0.1**  
+
+### The Team 
 **Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse  
 **Lab** - MRC SGDP (Charles Curtis)  
 
