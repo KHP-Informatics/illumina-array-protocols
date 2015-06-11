@@ -31,7 +31,6 @@ More details soon....
 - [Array 1]()  
 - [Array 2]()  
 - ...
-- 
 
 ## 2. Genomestudio 
 
