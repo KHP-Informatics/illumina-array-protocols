@@ -14,7 +14,7 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 - Genomestudio SOP (Manual Calling & QC)    
 - Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
 
-## BWA Mapping  
+## 1. BWA Mapping  
 
 Illumina SNP arrays include alot of probes that map to multiple (>500) sites in the Genome.  
 
@@ -26,9 +26,9 @@ are zeroed at the Genomestudio stage before clustering.
 
 More details soon....
 
-## Genomestudio 
+## 2. Genomestudio 
 
-## Qualitty Control and Re-Calling  
+## 3. Quality Control and Re-Calling  
 ******
 
 ### Genotypes and Samples Processed  
