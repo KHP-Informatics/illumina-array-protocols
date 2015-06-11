@@ -28,6 +28,9 @@ More details soon....
 ## Genomestudio 
 
 ## Qualitty Control and Re-Calling  
+******
+
+### Genotypes and Samples Processed  
 
 
 ******
