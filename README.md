@@ -13,6 +13,12 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 - Genomestudio SOP (Manual Calling & QC)    
 - Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
 
+## BWA Mapping  
+
+## Genomestudio 
+
+## Qualitty Control and Re-Calling  
+
 
 ******
 Copyright (C) 2015 Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse
