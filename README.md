@@ -23,11 +23,13 @@ manifests.
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
 ## BeadChips
-These are the BeadChips we have had experience in processing (so far...).
+These are the BeadChips we have experience in processing so far....
 
+- [HumanOmniExpress-24 v1.0 BeadChip](http://support.illumina.com/downloads/humanomniexpress-24-v1-0-product-files.html)  
+- [HumanOmniExpress-24 v1.1 BeadChip](http://support.illumina.com/downloads/humanomniexpress-24-v1-0-product-files.html)  
 - [HumanCoreExome-24 v1.0 BeadChip](http://support.illumina.com/downloads/humancoreexome-24-v1-0-product-files.html)  
 - [HumanOmniExpressExome-8 v1.1 BeadChip](http://support.illumina.com/downloads/humanomniexpressexome-8v1-1_product_files.html)   
-- [MEGA\_Consortium]()
+- [MEGA\_Consortium](link) (Early Access...)
 
 ## 1. BWA Mapping of Probe Sequences
 
