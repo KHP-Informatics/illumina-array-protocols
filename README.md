@@ -54,7 +54,10 @@ samtools index ${array}.sam && rm ${array}.sam
 
 - [mega_array_annotations.txt](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
 - [HumanCoreExome-24v1-0_A.csv](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv)  
-- [HumanOmniExpressExome-8-v1-1-C.csv](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)
+- [HumanOmniExpressExome-8-v1-1-C.csv](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)  
+- []()
+- []()
+- []()
 
 ### Probe Lists
 - ...
