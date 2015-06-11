@@ -1,12 +1,6 @@
 # [illumina](http://www.illumina.com/)-array-protocols
+
 **Protocols/scripts for processing illumina SNP arrays**  
-**VERSION: v0.1**  
-
-### The Team 
-**Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse  
-**Lab** - MRC SGDP (Charles Curtis)  
-
-******
 
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
 
@@ -14,20 +8,30 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 - Genomestudio SOP (Manual Calling & QC)    
 - Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
 
-### Illumina Web Resources
+**VERSION: v0.1**  
+
+## The Team 
+**Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse  @ [bluecell.io]()   
+**Lab** - Charles Curtis & Team @ [The IoPPN Genomics & Biomarker Core Facility](http://www.kcl.ac.uk/ioppn/depts/mrc/research/The-IoPPN-Genomics--Biomarker-Core-Facility.aspx)  
+
+![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
+
+## Illumina Web Resources
 This links takes you to Illumina's download page, which provides access to product documentation and
 manifests.
 
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
-### BeadChips
+## BeadChips
+These are the BeadChips we have had experience in processing. 
+
 - [HumanCoreExome-24 v1.0 BeadChip](http://support.illumina.com/downloads/humancoreexome-24-v1-0-product-files.html)  
 - [HumanOmniExpressExome-8 v1.1 BeadChip](http://support.illumina.com/downloads/humanomniexpressexome-8v1-1_product_files.html)   
 
 
 ****** 
 
-## 1. BWA Mapping  
+## 1. BWA Mapping of Probe Sequences
 
 Illumina SNP arrays include a lot of probes that map to multiple (>500) sites in the Genome.  
 
@@ -50,11 +54,7 @@ More details soon....
 - XXX [download]()
 - XXX [download]()
 
-### Probe Lists
-- ...
-- ...  
-
-### BWA BAM Files
+### BWA Mapping Results 
 
 **Running BWA**  
 Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngseasy-bwa](https://registry.hub.docker.com/u/compbio/ngseasy-bwa/) image.
@@ -88,6 +88,13 @@ rm ${array}.sam"
 **OMNI**  
 - ...   
 - ...     
+
+### Probe Lists  
+These lists provide data on probe mappings. We provide Illumina Probe Id's along with the
+number of time it maps to the genome. 
+
+- ...
+- ...  
 
 ## 2. Genomestudio 
 
