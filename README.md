@@ -16,7 +16,8 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 
 ## BWA Mapping  
 
-Illumina SNP arrays include alot of probes that map to multiple (>500) sites in the Genome.
+Illumina SNP arrays include alot of probes that map to multiple (>500) sites in the Genome.  
+
 For each array we map the probe sequences to the relevant genome build using BWA (as indicated by Illumina manifests), and
 identify probes that map 100% to multiple regions (>1 hit) of the genome.
 
