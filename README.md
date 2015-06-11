@@ -106,7 +106,7 @@ number of time it maps to the genome.
 | HumanCoreExome-24 v1.0 |[xxx]()|[xxx]()|
 
 
-### Table 1. True Number of variants after probe mapping
+### Table 1. Number of variants after probe mapping
 
 | BeadArry | N SNP Start |N SNP End |
 |-----|-----------|-------------------------|
