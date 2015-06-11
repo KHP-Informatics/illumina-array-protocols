@@ -47,7 +47,6 @@ Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngse
 ```bash
 ###################################
 ## BWA > samblaster > samtools
-# run on a 32 core machine 
 #
 docker run \
 -w /home/pipeman \
@@ -58,7 +57,7 @@ docker run \
 -t compbio/ngseasy-bwa:1.0 /bin/bash -c \
 "bwa mem -t 32 -V -M -a ${refGenome} ${array}.fasta | \
 samblaster --addMateTags --excludeDups | \
-samtools sort -@ 32 -T xx -O sam -o ${array}.sam && \
+samtools sort -@ 32 -T temp_ -O sam -o ${array}.sam && \
 samtools index ${array}.sam && \
 rm ${array}.sam"
 ```
