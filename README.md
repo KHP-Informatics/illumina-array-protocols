@@ -42,27 +42,35 @@ Those familiar with Illumina Arrays, will see that alot of the probes we identif
 More details soon....  
 
 **Running BWA**  
+Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngseasy-bwa](https://registry.hub.docker.com/u/compbio/ngseasy-bwa/) image.
 
 ```bash
 ###################################
 ## BWA > samblaster > samtools
 # run on a 32 core machine 
 #
-bwa mem -t 32 -V -M -a ${refGenome} ${array}.fasta | \
+docker run \
+-w /home/pipeman \
+-e HOME=/home/pipeman \
+-e USER=pipeman \
+--user pipeman \
+-i \
+-t compbio/ngseasy-bwa:1.0 /bin/bash -c \
+"bwa mem -t 32 -V -M -a ${refGenome} ${array}.fasta | \
 samblaster --addMateTags --excludeDups | \
 samtools sort -@ 32 -T xx -O sam -o ${array}.sam && \
 samtools index ${array}.sam && \
-rm ${array}.sam
+rm ${array}.sam"
 ```
 
 ### Illumina Array Annotations
 
-- [mega_array_annotations.txt](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
-- ["HumanCoreExome-24v1-0_A.csv"](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv)  
-- [HumanOmniExpressExome-8-v1-1-C.csv](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)  
-- []()
-- []()
-- []()
+- MEGA Array [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
+- HumanCoreExome-24v1-0_A.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv)  
+- HumanOmniExpressExome-8-v1-1-C.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)  
+- XXX [download]()
+- XXX [download]()
+- XXX [download]()
 
 ### Probe Lists
 - ...
