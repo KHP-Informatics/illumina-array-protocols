@@ -11,25 +11,22 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 **VERSION: v0.1**  
 
 ## The Team 
-**Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse  @ [bluecell.io]()   
+**Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Newhouse  @ [bluecell.io]()   
 **Lab** - Charles Curtis & Team @ [The IoPPN Genomics & Biomarker Core Facility](http://www.kcl.ac.uk/ioppn/depts/mrc/research/The-IoPPN-Genomics--Biomarker-Core-Facility.aspx)  
 
 ![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
 
-## Illumina Web Resources
+## Illumina Downloads Resource
 This links takes you to Illumina's download page, which provides access to product documentation and
 manifests.
 
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
 ## BeadChips
-These are the BeadChips we have had experience in processing. 
+These are the BeadChips we have had experience in processing (so far...).
 
 - [HumanCoreExome-24 v1.0 BeadChip](http://support.illumina.com/downloads/humancoreexome-24-v1-0-product-files.html)  
 - [HumanOmniExpressExome-8 v1.1 BeadChip](http://support.illumina.com/downloads/humanomniexpressexome-8v1-1_product_files.html)   
-
-
-****** 
 
 ## 1. BWA Mapping of Probe Sequences
 
@@ -41,13 +38,13 @@ identify probes that map 100% to multiple regions (>1 hit) of the genome.
 These probes are either flagged for removal before re-calling, or depending on what the data looks likes in Genomestudio,
 are zeroed at the Genomestudio stage before clustering.  
 
-Those familiar with Illumina Arrays, will see that a lot of the probes we identify are consitently poorly clustered variants, variants not called for alot of samples, and those messy clouds and/or the always homozygous variants - no matter the population or number of samples. 
+Those familiar with processing Illumina Arrays, will see that a lot of the probes we identify are consitently poorly clustered variants, variants not called for alot of samples, and those messy clouds and/or the always homozygous variants - no matter the population or number of samples. 
 
 More details soon....  
 
 ### Illumina Array Annotations
 
-- MEGA Array [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
+- MEGA\_Consortium\_15063755_B2.csv [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
 - HumanCoreExome-24v1-0_A.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv)  
 - HumanOmniExpressExome-8-v1-1-C.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)  
 - XXX [download]()
@@ -58,6 +55,10 @@ More details soon....
 
 **Running BWA**  
 Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngseasy-bwa](https://registry.hub.docker.com/u/compbio/ngseasy-bwa/) image.
+
+>Program: bwa (alignment via Burrows-Wheeler transformation)  
+>Version: 0.7.12-r1039  
+>Contact: Heng Li <lh3@sanger.ac.uk>  
 
 ```bash
 ###################################
