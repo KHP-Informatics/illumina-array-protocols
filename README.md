@@ -18,8 +18,7 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 
 ## Genomestudio 
 
-##
-Qualitty Control and Re-Calling  
+## Qualitty Control and Re-Calling  
 
 
 ******
