@@ -33,7 +33,9 @@ More details soon....
 - ...
 
 ### BAM Files
-- [MEGA ARRAY BWA BAM](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam)
+**MEGA**    
+- [mega_array_seq_sorted.bam](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam)
+- [mega_array_seq_sorted.bam.bai](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam.bai)
 
 ## 2. Genomestudio 
 
