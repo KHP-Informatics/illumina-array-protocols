@@ -24,7 +24,14 @@ identify probes that map 100% to multiple regions (>1 hit) of the genome.
 These probes are either flagged for removal before re-calling, or depending on what the data looks likes in Genomestudio,
 are zeroed at the Genomestudio stage before clustering.  
 
+Those familiar with Illumina Arrays, will see that alot of the probes we identify are those poorly clustered variants, no-calls for alot of samples, messy clouds and/or the always homozygous variants - no matter the population or number of samples. 
+
 More details soon....
+
+- [Array 1]()  
+- [Array 2]()  
+- ...
+- 
 
 ## 2. Genomestudio 
 
