@@ -102,16 +102,38 @@ number of time it maps to the genome.
 
 ## 2. Genomestudio 
 
+- Manual clustering, inspection and filtering of variants in genomestudio
+- ensures that the most robust data is produced
+- allows iterative qc of samples and snps and ability to rescue data close to qc thresholds for exclusion
+- for each array we cluster variants based on data and generate new custom egt files 
+- custom egt files used for all subsequent projects
+
 More details soon....
 
 ## 3. Quality Control and Re-Calling  
+
+- data exported and processed using [custom scripts]()
+- standard gwas qc 
+   - sample & snp call rates
+   - IBD 
+   - het if requested
+   - maf & hwe if requested
+   - gender checks if requested and if gender provided
+   - No PCA or MDS (this is for the data owners to do)
+- No-Call Variants recalled using zCall
+- Produce PLINK Files for further analysis by data owners 
 
 More details soon....
 
 ******
 
-### Genotypes and Samples Processed  
+### No. Genotypes and Samples Processed  
 
+| var | N |
+|--
+|--|
+| Samples | 10000 |
+| SNPS | 1000000000| 
 
 ******
 Copyright (C) 2015 Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse
