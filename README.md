@@ -28,16 +28,24 @@ Those familiar with Illumina Arrays, will see that alot of the probes we identif
 
 More details soon....
 
-- [Array 1]()  
+### ARRAY ANNOTATIONS
+
+- [mega_array_annotations.txt](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
 - [Array 2]()  
 - ...
 
-### BAM Files
+### Probe Lists
+- ...
+- ...  
+
+### BWA BAM Files
 **MEGA**    
 - [mega_array_seq_sorted.bam](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam)
 - [mega_array_seq_sorted.bam.bai](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam.bai)
 
 **OMNI**  
+- ...
+- ...  
 
 ## 2. Genomestudio 
 
