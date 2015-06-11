@@ -28,7 +28,12 @@ More details soon....
 
 ## 2. Genomestudio 
 
+More details soon....
+
 ## 3. Quality Control and Re-Calling  
+
+More details soon....
+
 ******
 
 ### Genotypes and Samples Processed  
