@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Illumina-array-protocols by KHP-Informatics</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Illumina-array-protocols</h1>
+        <h2>processing illumina SNP arrays</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/KHP-Informatics/illumina-array-protocols/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/KHP-Informatics/illumina-array-protocols/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/KHP-Informatics/illumina-array-protocols" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="illumina-array-protocols" class="anchor" href="#illumina-array-protocols" aria-hidden="true"><span class="octicon octicon-link"></span></a>illumina-array-protocols</h1>
+
+<p><strong>Protocols/scripts for processing illumina SNP arrays</strong><br>
+<strong>VERSION: v0.1</strong>  </p>
+
+<h3>
+<a id="the-team" class="anchor" href="#the-team" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Team</h3>
+
+<p><strong>Bioinformatics</strong> - Hamel Patel, Amos Folarin &amp; Stephen Jeffrey Newhouse<br>
+<strong>Lab</strong> - MRC SGDP (Charles Curtis)  </p>
+
+<hr>
+
+<p>A set of scripts and protocols that we use to processing raw Illumina SNP array data.</p>
+
+<ul>
+<li>BWA Mapping of probe sequences<br>
+</li>
+<li>Genomestudio SOP (Manual Calling &amp; QC)<br>
+</li>
+<li>Standard QC (PLINK, bash...) and re-calling No-Calls using zCall<br>
+</li>
+</ul>
+
+<h2>
+<a id="1-bwa-mapping" class="anchor" href="#1-bwa-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. BWA Mapping</h2>
+
+<p>Illumina SNP arrays include alot of probes that map to multiple (&gt;500) sites in the Genome.  </p>
+
+<p>For each array we map the probe sequences to the relevant genome build using BWA (as indicated by Illumina manifests), and
+identify probes that map 100% to multiple regions (&gt;1 hit) of the genome.</p>
+
+<p>These probes are either flagged for removal before re-calling, or depending on what the data looks likes in Genomestudio,
+are zeroed at the Genomestudio stage before clustering.  </p>
+
+<p>Those familiar with Illumina Arrays, will see that alot of the probes we identify are those poorly clustered variants, no-calls for alot of samples, messy clouds and/or the always homozygous variants - no matter the population or number of samples. </p>
+
+<p>More details soon....</p>
+
+<h3>
+<a id="array-annotations" class="anchor" href="#array-annotations" aria-hidden="true"><span class="octicon octicon-link"></span></a>ARRAY ANNOTATIONS</h3>
+
+<ul>
+<li>
+<a href="https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz">mega_array_annotations.txt</a><br>
+</li>
+<li>
+<a href="">Array 2</a><br>
+</li>
+<li>...</li>
+</ul>
+
+<h3>
+<a id="probe-lists" class="anchor" href="#probe-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Probe Lists</h3>
+
+<ul>
+<li>...</li>
+<li>...<br>
+</li>
+</ul>
+
+<h3>
+<a id="bwa-bam-files" class="anchor" href="#bwa-bam-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>BWA BAM Files</h3>
+
+<p><strong>MEGA</strong>    </p>
+
+<ul>
+<li><a href="https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam">mega_array_seq_sorted.bam</a></li>
+<li><a href="https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam.bai">mega_array_seq_sorted.bam.bai</a></li>
+</ul>
+
+<p><strong>OMNI</strong>  </p>
+
+<ul>
+<li>...</li>
+<li>...<br>
+</li>
+</ul>
+
+<h2>
+<a id="2-genomestudio" class="anchor" href="#2-genomestudio" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Genomestudio</h2>
+
+<p>More details soon....</p>
+
+<h2>
+<a id="3-quality-control-and-re-calling" class="anchor" href="#3-quality-control-and-re-calling" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Quality Control and Re-Calling</h2>
+
+<p>More details soon....</p>
+
+<hr>
+
+<h3>
+<a id="genotypes-and-samples-processed" class="anchor" href="#genotypes-and-samples-processed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Genotypes and Samples Processed</h3>
+
+<hr>
+
+<p>Copyright (C) 2015 Hamel Patel, Amos Folarin &amp; Stephen Jeffrey Newhouse</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
