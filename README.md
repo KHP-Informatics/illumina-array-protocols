@@ -97,8 +97,24 @@ rm ${array}.sam"
 These lists provide data on probe mappings. We provide Illumina Probe Id's along with the
 number of time it maps to the genome. 
 
-- ...
-- ...  
+| BeadArry | probe mapping | good probes|
+|-----|-----------|-------------------------|
+| MEGA\_Consortium\_15063755_B2 | [xxx]()| [xxx]()| 
+| HumanOmniExpressExome-8 v1.1 | [xxx]()| [xxx]()| 
+| HumanOmniExpress-24 v1.1 |[xxx]()| [xxx]()|  
+| HumanOmniExpress-24 v1.0 |[xxx]()| [xxx]()|  
+| HumanCoreExome-24 v1.0 |[xxx]()|[xxx]()|
+
+
+### Table 1. True Number of variants after probe mapping
+
+| BeadArry | N SNP Start |N SNP End |
+|-----|-----------|-------------------------|
+| MEGA\_Consortium\_15063755_B2 | 1.7m| 1.5m| 
+| HumanOmniExpressExome-8 v1.1 | ?| ?| 
+| HumanOmniExpress-24 v1.1 |?| ?|  
+| HumanOmniExpress-24 v1.0 |?| ?|  
+| HumanCoreExome-24 v1.0 |?|?|
 
 ## 2. Genomestudio 
 
@@ -129,9 +145,8 @@ More details soon....
 
 ### No. Genotypes and Samples Processed  
 
-| var | N |
-|--
-|--|
+| Samples/SNPs | Total |
+|-----|-----------|
 | Samples | 10000 |
 | SNPS | 1000000000| 
 
