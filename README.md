@@ -2,15 +2,21 @@
 ** *work in progress..some links dont work and data and scritps to be added asap* **  
 
 ## Protocols for processing illumina SNP arrays 
-
+ 
 **VERSION: v0.1**  
 **Date: June 2015**  
+**Authors: Stephen Newhouse, Hamel Patel, Amos Folarin, Charles Curtis**
 
+[toc]
+
+## Quick Overview
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
 
+- Links to information about Illumina BeadChips
 - BWA Mapping of probe sequences  
 - Genomestudio SOP (Manual Calling & QC)    
 - Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
+- Some reading...
 
 ## The Team 
 **Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Newhouse  @ [bluecell.io]()   
@@ -18,6 +24,10 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 **Lab** - Charles Curtis & Team @ [The IoPPN Genomics & Biomarker Core Facility](http://www.kcl.ac.uk/ioppn/depts/mrc/research/The-IoPPN-Genomics--Biomarker-Core-Facility.aspx)  
 
 ![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
+
+## The Flow
+
+*WORK FLOW PIC...*
 
 ## Illumina BeadArray Microarray Technology 
 
@@ -89,6 +99,7 @@ More details soon....including a few pics...
 
 All data on Amazon S3 https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/   
 ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/  
+
 ### BWA Mapping Results 
 
 **Running BWA**  
@@ -169,7 +180,7 @@ More details soon....
 
 ******
 
-### No. Genotypes and Samples Processed  
+## No. Genotypes and Samples Processed  
 
 | Samples/SNPs | Total |
 |-----|-----------|
