@@ -403,7 +403,7 @@ ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
 time make-fasta-from-annotation-csv.sh ${ARRAY_CSV}
 
 ## Run BWA
-time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
+time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} NCPU=32
 ```
 
 ```
