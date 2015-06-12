@@ -6,7 +6,6 @@
 **VERSION: v0.1**  
 **Date: June 2015**  
 
-
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
 
 - BWA Mapping of probe sequences  
@@ -29,6 +28,8 @@ manifests.
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
 ## BeadChips
+- [Illumina Vids 1](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=illumina+beadchip+technology&safe=off&tbm=vid)  
+- [Illumina Vids 2](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=off&tbm=vid&q=illumina+beadchip)  
 
 These are the BeadChips we have experience in processing so far....
 
