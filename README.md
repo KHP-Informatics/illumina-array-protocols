@@ -48,10 +48,10 @@ are zeroed at the Genomestudio stage before clustering.
 
 Those familiar with processing Illumina Arrays, will see that a lot of the probes we identify are :- 
    
-- consitently poorly clustered variants  
+- variants that are consitently poorly clustered   
 - variants not called for a lot of samples  
-- messy clouds  
-- always homozygous variants - no matter the population or number of samples. 
+- variants with more than 3 clusters (not to be confused with CNV)   
+- variants that are always homozygous variants (no matter the population or number of samples)  
 
 More details soon....including a few pics...
 
