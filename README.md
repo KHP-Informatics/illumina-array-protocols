@@ -418,14 +418,23 @@ echo -e "\n>>>>DONE [make-fasta-from-annotation-csv.sh ${1}]\n"
 sleep 1s
 ```
 
-### Probe B
 
 ```bash
-# Probe A and B
-cat mega_array_probe_seq.csv | tr ',' '\t' | awk ' $4 ~ /[ATCG]/ ' > mega_array_probeAB_seq.tsv
-
-# make fasta
-cat mega_array_probeAB_seq.tsv | sed '1d' | awk '{print ">"$1"."$2"_probeA""\n"$3"\n"">"$1"."$2"_probeB""\n"$4}' > mega_array_probeAB_seq.fasta
+make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 ```
 
 
+```
+>>>>START [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
+
+....Make new annotation file: remove header and ending guff and add new name for look-ups > [HumanCoreExome-24v1-0_A.txt]
+....Make Fasta File for Variants with single probe sequence (A) only > [HumanCoreExome-24v1-0_A.single.probe.A.fasta]
+....Make Fasta File for Variants with mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.multi.probe.A.and.B.fasta]
+....Make Fasta File for All Variants: single and mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.fasta]
+
+>>>>DONE [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
+
+real    0m7.582s
+user    0m5.154s
+sys     0m3.605s
+```
