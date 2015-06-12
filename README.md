@@ -1,4 +1,5 @@
 # [illumina](http://www.illumina.com/)-array-protocols
+** work in progress **  
 
 **Protocols/scripts for processing illumina SNP arrays**  
 
