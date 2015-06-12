@@ -46,9 +46,14 @@ identify probes that map 100% to multiple regions (>1 hit) of the genome.
 These probes are either flagged for removal before re-calling, or depending on what the data looks likes in Genomestudio,
 are zeroed at the Genomestudio stage before clustering.  
 
-Those familiar with processing Illumina Arrays, will see that a lot of the probes we identify are consitently poorly clustered variants, variants not called for alot of samples, and those messy clouds and/or the always homozygous variants - no matter the population or number of samples. 
+Those familiar with processing Illumina Arrays, will see that a lot of the probes we identify are :- 
+   
+- consitently poorly clustered variants  
+- variants not called for a lot of samples  
+- messy clouds  
+- always homozygous variants - no matter the population or number of samples. 
 
-More details soon....  
+More details soon....including a few pics...
 
 ### Illumina Array Annotations
 
