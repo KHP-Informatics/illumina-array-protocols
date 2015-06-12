@@ -388,6 +388,10 @@ BWA & Indexed Genomes provided as part of [NGSeasy](https://github.com/KHP-Infor
 
 Assume `make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv` already run
 
+### The pipeline so far.....
+
+- make fasta > bwa map  
+
 ```bash
 ## Genome (GATK Resources)
 GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
