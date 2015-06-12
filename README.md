@@ -389,27 +389,17 @@ BEADCHIP=`basename ${MY_FILE} .csv`
 
 ## remove header and tails and add new name for look-ups
 awk -F "," 'NR > 7 {print $0}' ${BEADCHIP}.csv | grep -v ^00 | grep -v "Controls" | \
-awk -F "," '{print $1"x"$2","$0}' > ${BEADCHIP}.txt
+awk -F "," '{print $1"xSEQIDx"$2","$0}' > ${BEADCHIP}.txt
 
 ## Get Probe A Only Variants
-cat ${BEADCHIP}.txt | tr ',' '\t' | awk ' $4 !~ /[ATCG]/ ' | \
-awk '{print ">"$1"."$2"\n"$3}' >  ${BEADCHIP}.single.probe.A.fasta
+cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk ' $9 !~ /[ATCG]/ ' | \
+awk '{print ">"$1"\n"$7}' >  ${BEADCHIP}.single.probe.A.fasta
 
 ## Get Probe A & B Variants
-cat ${BEADCHIP}.txt
+cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk ' $9 !~ /[ATCG]/ ' | \
+awk '{print ">"$1"\n"$5}' >  ${BEADCHIP}.multi.probe.A.and.B.fasta
 
-#cut -d "," -f 1,2,6,8 mega_array_annotations.txt > mega_array_probe_seq.csv
 
-```
-
-### Probe A
-
-```bash
-# Probe A only
-cat mega_array_probe_seq.csv | tr ',' '\t' | awk ' $4 !~ /[ATCG]/ ' > mega_array_probeAonly_seq.tsv
-
-# make fasta
-cat mega_array_probeAonly_seq.tsv | awk '{print ">"$1"."$2"\n"$3}' > mega_array_probeAonly_seq.fasta
 ```
 
 ### Probe B
