@@ -434,7 +434,7 @@ make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 >>>>DONE [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
 
-real    0m7.582s
-user    0m5.154s
-sys     0m3.605s
+real    0m5.014s
+user    0m5.431s
+sys     0m3.007s
 ```
