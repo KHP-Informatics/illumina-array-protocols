@@ -27,7 +27,10 @@ manifests.
 
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
-## BeadChips
+## BeadArray Microarray Technology 
+[BeadArray Microarray Technology](http://www.illumina.com/technology/beadarray-technology.html) 
+
+**Some videos**   
 - [Illumina Vids 1](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=illumina+beadchip+technology&safe=off&tbm=vid)  
 - [Illumina Vids 2](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=off&tbm=vid&q=illumina+beadchip)  
 
