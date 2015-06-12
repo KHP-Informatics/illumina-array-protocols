@@ -66,8 +66,8 @@ More details soon....including a few pics...
 | humanexome-12v1_a.csv |[download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/)|[fasta]()|
 | XXX |[download]()|[fasta]()|
 
-All data on Amazon S3 https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/  
-
+All data on Amazon S3 https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/   
+ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/  
 ### BWA Mapping Results 
 
 **Running BWA**  
@@ -158,4 +158,30 @@ More details soon....
 ******
 Copyright (C) 2015 Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse
 
+********
 
+ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/
+
+```
+bpmFiles/		10/15/13, 12:00:00 AM
+HumanCore/		5/4/15, 3:10:00 PM
+HumanCore-24/		9/25/14, 12:00:00 AM
+HumanCoreExome/		2/19/15, 10:48:00 AM
+HumanCoreExome-24/		2/17/15, 10:44:00 AM
+HumanCVD/		10/15/13, 12:00:00 AM
+HumanExome/		7/9/14, 12:00:00 AM
+HumanGenotypingArrays/		7/15/14, 12:00:00 AM
+HumanMethylation27/		10/15/13, 12:00:00 AM
+HumanMethylation450/		10/15/13, 12:00:00 AM
+HumanOmni1-Quad/		10/15/13, 12:00:00 AM
+HumanOmni2-5Exome-8/		2/19/15, 5:44:00 PM
+HumanOmni5-Quad/		3/4/15, 2:25:00 PM
+HumanOmni5Exome/		1/29/15, 5:12:00 PM
+HumanOmni5MExome/		10/15/13, 12:00:00 AM
+HumanOmni25/		2/17/15, 10:15:00 AM
+HumanOmniExpress/		7/10/14, 12:00:00 AM
+HumanOmniExpress-24/		2/17/15, 10:56:00 AM
+HumanOmniExpressExome/		7/11/14, 12:00:00 AM
+HumanOmniZhongHua-8/		2/23/15, 6:05:00 PM
+PsychArray/		5/28/15, 10:13:00 AM
+```
