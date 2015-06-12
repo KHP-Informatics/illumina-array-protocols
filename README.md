@@ -356,7 +356,7 @@ tail -24 HumanCoreExome-24v1-0_A.csv
 0013642359:0013642359:0013642359:0013642359,Non-Polymorphic,Blue,NP (G)
 0028637363:0028637363:0028637363:0028637363,Restoration,Green,Restore
 ```
-## Get Variant Minimal Information
+## Get Variant Information and Make Fasta Files
 
 Header:-  
 
@@ -366,7 +366,7 @@ IlmnID,Name,IlmnStrand,SNP,AddressA_ID,AlleleA_ProbeSeq,AddressB_ID,AlleleB_Prob
 
 Get minimal info `IlmnID,Name,AlleleA_ProbeSeq,AlleleB_ProbeSeq`
 
-`make-fasta-from-annotation-csv.sh`
+`bin/make-fasta-from-annotation-csv.sh`
 
 ```bash
 #!/usr/bin/env bash
