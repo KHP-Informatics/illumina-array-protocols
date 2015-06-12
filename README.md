@@ -4,6 +4,8 @@
 ## Protocols for processing illumina SNP arrays 
 
 **VERSION: v0.1**  
+**Date: June 2015**  
+
 
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
 
