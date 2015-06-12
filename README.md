@@ -394,7 +394,7 @@ Assume `make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv` already r
 
 ```bash
 ## Genome (GATK Resources)
-GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
+GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37"  
 
 ## BeadArray Annotation .csv
 ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
@@ -438,11 +438,14 @@ samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
 samtools index ${BEADCHIP}.sam]\n"
 
 ## Run BWA 
-docker run --rm \
+docker run \
 -w /home/pipeman \
 -e HOME=/home/pipeman \
--e USER=pipeman --user pipeman \
--i -t compbio/ngseasy-bwa:1.0 /bin/bash -c \
+-e USER=pipeman \
+--user pipeman \
+-v ${PWD}:/home/pipeman \
+-i \
+-t compbio/ngseasy-bwa:1.0 /bin/bash -c \
 "bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
 samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
