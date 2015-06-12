@@ -17,7 +17,7 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 - Links to information about Illumina BeadChips
 - BWA Mapping of probe sequences  
 - Genomestudio SOP (Manual Calling & QC)    
-- Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
+- Standard QC (PLINK, sh...) and re-calling No-Calls using zCall  
 - Some reading...
 
 ## The Team 
@@ -114,7 +114,7 @@ Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngse
 >Version: 0.7.12-r1039  
 >Contact: Heng Li <lh3@sanger.ac.uk>  
 
-```bash
+```sh
 ###################################
 ## BWA > samblaster > samtools
 #
@@ -236,7 +236,7 @@ All processed on Rosalind image
 
 getting the data ... 
 
-```bash
+```sh
 wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
 ```
 
@@ -249,7 +249,7 @@ wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles
 
 
 
-```bash
+```sh
 head HumanCoreExome-24v1-0_A.csv
 ```
 
@@ -268,7 +268,7 @@ IlmnID,Name,IlmnStrand,SNP,AddressA_ID,AlleleA_ProbeSeq,AddressB_ID,AlleleB_Prob
 
 **Tail** `HumanCoreExome-24v1-0_A.csv`
 
-```bash
+```sh
 tail -24 HumanCoreExome-24v1-0_A.csv
 ```
 
@@ -310,8 +310,8 @@ Get minimal info `IlmnID,Name,AlleleA_ProbeSeq,AlleleB_ProbeSeq`
 
 `bin/make-fasta-from-annotation-csv.sh`
 
-```bash
-#!/usr/bin/env bash
+```sh
+#!/usr/bin/env sh
 set -o errexit
 set -o nounset
 
@@ -362,7 +362,7 @@ sleep 1s
 
 **testing `make-fasta-from-annotation-csv.sh`**
 
-```bash
+```sh
 time make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 ```
 
