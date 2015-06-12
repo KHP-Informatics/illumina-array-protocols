@@ -234,7 +234,7 @@ PsychArray/		5/28/15, 10:13:00 AM
 
 All processed on Rosalind image  
 
-getting the data ...  
+getting the data ... 
 
 ```bash
 wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
