@@ -393,14 +393,17 @@ Assume `make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv` already r
 ## Genome (GATK Resources)
 GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
 
+## BeadArray Annotation .csv
+ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
+
 ## Makes Fasta Files
-# time make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
+# time make-fasta-from-annotation-csv.sh ${ARRAY_CSV}
 
 ## Run BWA
-time aln-fasta-bwa-docker.sh HumanCoreExome-24v1-0_A.csv ${GENOME} 32
+time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
 ```
 
-`bin/make-fasta-from-annotation-csv.sh`
+Inside `bin/make-fasta-from-annotation-csv.sh`
 
 ```sh
 #!/usr/bin/env sh
