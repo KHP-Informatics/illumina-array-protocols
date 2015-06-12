@@ -2,13 +2,13 @@
 
 **Protocols/scripts for processing illumina SNP arrays**  
 
+**VERSION: v0.1**  
+
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
 
 - BWA Mapping of probe sequences  
 - Genomestudio SOP (Manual Calling & QC)    
 - Standard QC (PLINK, bash...) and re-calling No-Calls using zCall  
-
-**VERSION: v0.1**  
 
 ## The Team 
 **Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Newhouse  @ [bluecell.io]()   
@@ -47,12 +47,14 @@ More details soon....
 
 ### Illumina Array Annotations
 
-- MEGA\_Consortium\_15063755_B2.csv [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz)  
-- HumanCoreExome-24v1-0_A.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv)  
-- HumanOmniExpressExome-8-v1-1-C.csv [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv)  
-- XXX [download]()
-- XXX [download]()
-- XXX [download]()
+| Array | Download Link |
+|-------|---------------|
+|MEGA\_Consortium\_15063755_B2.csv | [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz) |
+|HumanCoreExome\-24v1\-0\_A.csv |[download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv) |
+|HumanOmniExpressExome\-8\-v1\-1\-C.csv | [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv) |
+| XXX |[download]()|
+| XXX |[download]()|
+| XXX |[download]()|
 
 ### BWA Mapping Results 
 
