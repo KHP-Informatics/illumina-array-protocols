@@ -2,19 +2,26 @@
 set -o errexit
 set -o nounset
 
-
 ###########################################################################################
 # Program: make-fasta-from-annotation-csv.sh
 # Version 0.1
 # Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
 ###########################################################################################
 
+if test -z "$1"; then
+        echo -e "....ERROR No Input File detected\n"
+        ehco -e "....USAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>"
+        sleep 1s
+        exit 1
+fi
+
 ## USAGE: make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 ## input
 MY_FILE=${1}
 
-echo -e "....START [make-fasta-from-annotation-csv.sh ${1}"
+echo -e "....START [make-fasta-from-annotation-csv.sh ${1}\n"
+sleep 1s
 
 ## beadChip name 
 BEADCHIP=`basename ${MY_FILE} .csv`
@@ -35,7 +42,7 @@ echo -e "....Make Fasta File for Variants with single probe sequence (A) only"
 echo -e "....Make Fasta File for Variants with mulitiple probe sequences (A & B)"
 
     cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk -F "\t" ' $9 ~ /[ATCG]/ ' | \
-        awk '{print ">"$1"_PobeA"""\n"$7"\n"">"$1"_PobeA""\n"$9}' >  ${BEADCHIP}.multi.probe.A.and.B.fasta
+        awk '{print ">"$1"_PobeA""\n"$7"\n"">"$1"_PobeB""\n"$9}' >  ${BEADCHIP}.multi.probe.A.and.B.fasta
 
 ## Combine fasta files for mapping
 echo -e "....Make Fasta File for All Variants: single and mulitiple probe sequences (A & B)"
@@ -43,4 +50,5 @@ echo -e "....Make Fasta File for All Variants: single and mulitiple probe sequen
     cat ${BEADCHIP}.single.probe.A.fasta ${BEADCHIP}.multi.probe.A.and.B.fasta > ${BEADCHIP}.fasta
 
 ## END    
-echo -e "....DONE [make-fasta-from-annotation-csv.sh ${1}]"
+echo -e "\n....DONE [make-fasta-from-annotation-csv.sh ${1}]"
+sleep 1s
