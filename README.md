@@ -403,7 +403,7 @@ ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
 time make-fasta-from-annotation-csv.sh ${ARRAY_CSV}
 
 ## Run BWA
-time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} NCPU=32
+time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
 ```
 
 ```
@@ -438,19 +438,14 @@ samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
 samtools index ${BEADCHIP}.sam]\n"
 
 ## Run BWA 
-docker run \
--w /home/pipeman \
--e HOME=/home/pipeman \
--e USER=pipeman \
---user pipeman \
--v ${PWD}:/home/pipeman \
--i \
--t compbio/ngseasy-bwa:1.0 /bin/bash -c \
-"bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
+bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
 samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
-samtools index ${BEADCHIP}.sam"
+samtools index ${BEADCHIP}.sam
 wait
 
 echo -e "\n>>>> END [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
 ```
+/usr/local/bin/samblaster
+/usr/local/bin/bwa
+/usr/local/bin/samtools
