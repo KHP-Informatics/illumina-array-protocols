@@ -413,7 +413,7 @@ some output
 Inside `bin/make-fasta-from-annotation-csv.sh`
 
 ```sh
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -o errexit
 set -o nounset
 
