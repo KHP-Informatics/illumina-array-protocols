@@ -407,7 +407,33 @@ time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
 ```
 
 ```
-some output
+>>>> START [aln-fasta-bwa-docker.sh   ]
+
+ubuntu@ngseasy-sjn:/media/Data/mega_array$
+ubuntu@ngseasy-sjn:/media/Data/mega_array$ time illumina-array-protocols/bin/aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
+
+>>>> START [aln-fasta-bwa-docker.sh HumanCoreExome-24v1-0_A.csv /media/Data/ngs_resources/reference_genomes_b37/human_g1k_v37.fasta 32]
+
+.... Running [bwa mem -t 32 -V -M -a /media/Data/ngs_resources/reference_genomes_b37/human_g1k_v37.fasta HumanCoreExome-24v1-0_A.fasta | samblaster --addMateTags --excludeDups | samtools sort -@ 32 -T temp_ -O sam -o HumanCoreExome-24v1-0_A.sam && samtools index HumanCoreExome-24v1-0_A.sam]
+
+samblaster: Version 0.1.21
+samblaster: Inputting from stdin
+samblaster: Outputting to stdout
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 577420 sequences (28871000 bp)...
+[M::mem_process_seqs] Processed 577420 reads in 45.554 CPU sec, 4.102 real sec
+samblaster: Loaded 84 header sequence entries.
+samblaster: Marked 35105 of 577420 (6.08%) read ids as duplicates using 14776k memory in 0.326S CPU seconds and 8S wall time.
+[main] Version: 0.7.12-r1039
+[main] CMD: bwa mem -t 32 -V -M -a /media/Data/ngs_resources/reference_genomes_b37/human_g1k_v37.fasta HumanCoreExome-24v1-0_A.fasta
+[main] Real time: 7.523 sec; CPU: 47.991 sec
+
+>>>> END [aln-fasta-bwa-docker.sh HumanCoreExome-24v1-0_A.csv /media/Data/ngs_resources/reference_genomes_b37/human_g1k_v37.fasta 32]
+
+
+real    0m8.949s
+user    0m45.335s
+sys     0m4.926s
 ```
 
 Inside `bin/make-fasta-from-annotation-csv.sh`
