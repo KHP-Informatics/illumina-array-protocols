@@ -9,7 +9,28 @@
 **Date: June 2015**  
 **Authors: Stephen Newhouse, Hamel Patel, Amos Folarin, Charles Curtis**
 
-[toc]
+Table of Contents
+=================
+
+ * [](#illumina-array-protocols)
+  * [Protocols for processing illumina SNP arrays](#protocols-for-processing-illumina-snp-arrays)
+    * [Quick Overview](#quick-overview)
+    * [The Team](#the-team)
+    * [The Flow](#the-flow)
+    * [Illumina BeadArray Microarray Technology](#illumina-beadarray-microarray-technology)
+ * [](#beadarray-microarray-technology)
+ * [](#infinium-hd-assay)
+    * [Illumina Downloads Resource](#illumina-downloads-resource)
+    * [1. BWA Mapping of Probe Sequences](#1-bwa-mapping-of-probe-sequences)
+      * [Illumina Array Annotations](#illumina-array-annotations)
+      * [BWA Mapping Results](#bwa-mapping-results)
+      * [Probe Lists](#probe-lists)
+        * [Table 1. Number of variants after probe mapping](#table-1-number-of-variants-after-probe-mapping)
+    * [2. Genomestudio](#2-genomestudio)
+    * [3. Quality Control and Re-Calling](#3-quality-control-and-re-calling)
+    * [No. Genotypes and Samples Processed](#no-genotypes-and-samples-processed)
+    * [Scratch (Lab Book)](#scratch-lab-book)
+    * [csv formats](#csv-formats)ß
 
 ## Quick Overview
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
