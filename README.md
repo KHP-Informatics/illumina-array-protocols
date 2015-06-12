@@ -1,7 +1,7 @@
 # [illumina](http://www.illumina.com/)-array-protocols
-** work in progress **  
+** *work in progress..some links dont work and data and scritps to be added asap* **  
 
-**Protocols/scripts for processing illumina SNP arrays**  
+## Protocols for processing illumina SNP arrays 
 
 **VERSION: v0.1**  
 
@@ -13,17 +13,21 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 
 ## The Team 
 **Bioinformatics** - Hamel Patel, Amos Folarin & Stephen Newhouse  @ [bluecell.io]()   
+
 **Lab** - Charles Curtis & Team @ [The IoPPN Genomics & Biomarker Core Facility](http://www.kcl.ac.uk/ioppn/depts/mrc/research/The-IoPPN-Genomics--Biomarker-Core-Facility.aspx)  
 
 ![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
 
 ## Illumina Downloads Resource
+We provide links out to Illumina product data, as these are often not easliy found by the web/tech/google niave.  
+
 This links takes you to Illumina's download page, which provides access to product documentation and
 manifests.
 
 - [Illumina Downloads](http://support.illumina.com/downloads.html)
 
 ## BeadChips
+
 These are the BeadChips we have experience in processing so far....
 
 | BeadChips |
@@ -160,9 +164,16 @@ Copyright (C) 2015 Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse
 
 ********
 
-## Scratch
+## Scratch (Lab Book)
+> Dr Stephen Newhouse <stephen.j.newhouse@gmail.com>  
+> Lab Book and messing around - this will change and/or be removed soon  
+> Code examples will be added to `./bin`
+> 
 
-ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/
+**Getting product data**  
+All at <ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/>
+
+**A snap shot of whats in there**  
 
 ```
 bpmFiles/		10/15/13, 12:00:00 AM
@@ -187,8 +198,8 @@ HumanOmniExpressExome/		7/11/14, 12:00:00 AM
 HumanOmniZhongHua-8/		2/23/15, 6:05:00 PM
 PsychArray/		5/28/15, 10:13:00 AM
 ```
-xs
-All on Rosalind  
+
+All processed on Rosalind image  
 
 `get-illumina-product-files.sh`
 
@@ -254,5 +265,62 @@ Jobs killed and now trying...
 wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
 ```
 
+## csv formats
 
+**Header** `HumanCoreExome-24v1-0_A.csv`
+
+- skip 7  
+- remove tail -24
+
+
+
+```bash
+head HumanCoreExome-24v1-0_A.csv
+```
+
+```
+Illumina
+[Heading]
+Descriptor File Name,HumanCoreExome-24v1-0_A.bpm
+Assay Format,Infinium HTS
+Date Manufactured,4/10/2014
+Loci Count ,547644
+[Assay]
+IlmnID,Name,IlmnStrand,SNP,AddressA_ID,AlleleA_ProbeSeq,AddressB_ID,AlleleB_ProbeSeq,GenomeBuild,Chr,MapInfo,Ploidy,Species,Source,SourceVersion,SourceStrand,SourceSeq,TopGenomicSeq,BeadSetID,Exp_Clusters,RefStrand
+401070-0_B_F_1853042904,401070,BOT,[G/C],0037685961,ATCCAGTAATATGCATCATGGAATGAACTGATTTCAAAATGTAATCCAAG,0037805256,ATCCAGTAATATGCATCATGGAATGAACTGATTTCAAAATGTAATCCAAC,37,4,100333846,diploid,Homo sapiens,ILLUMINA,0,TOP,AAACTATTATTTTTTAGATTTGAATATAAATGTATTTTTTAAACACTTGTTATGAGTTAA[C/G]TTGGATTACATTTTGAAATCAGTTCATTCCATGATGCATATTACTGGATTAGATTAAGAA,AAACTATTATTTTTTAGATTTGAATATAAATGTATTTTTTAAACACTTGTTATGAGTTAA[C/G]TTGGATTACATTTTGAAATCAGTTCATTCCATGATGCATATTACTGGATTAGATTAAGAA,837,3,+
+1KG_1_100177980-0_M_R_2255313133,1KG_1_100177980,MINUS,[D/I],0088747340,TTTGGCAGTTCTTCAGCCTCTTCTGGCAGTCTTCAGGCCACCTTTACATG,,,37,1,100177980,diploid,Homo sapiens,unknown,0,PLUS,TaaaaTGCaaaattttTCCATTTGaaaaCAGATTAGTTTGCCAACTAATGatatCTACATTAagagAGCATTtataTAGAAAGGctctAAGTACCTTGGGT[-/C]CATGTAAAGGTGGCCTGAAGACTGCCagaagaGGCTgaagaaCTGCCAAAGtcatcaCtataCAGCCGAGGTATGggtggtAACCTGCATGCTAAACAAA,TaaaaTGCaaaattttTCCATTTGaaaaCAGATTAGTTTGCCAACTAATGatatCTACATTAagagAGCATTtataTAGAAAGGctctAAGTACCTTGGGT[-/C]CATGTAAAGGTGGCCTGAAGACTGCCagaagaGGCTgaagaaCTGCCAAAGtcatcaCtataCAGCCGAGGTATGggtggtAACCTGCATGCTAAACAAA,837,3,-
+```
+
+**Tail** `HumanCoreExome-24v1-0_A.csv`
+
+```bash
+tail -24 HumanCoreExome-24v1-0_A.csv
+```
+
+```
+[Controls]
+0027630314:0027630314:0027630314:0027630314,Staining,Red,DNP (High)
+0029619375:0029619375:0029619375:0029619375,Staining,Purple,DNP (Bgnd)
+0041666334:0041666334:0041666334:0041666334,Staining,Green,Biotin (High)
+0034648333:0034648333:0034648333:0034648333,Staining,Blue,Biotin (Bgnd)
+0017616306:0017616306:0017616306:0017616306,Extension,Red,Extension (A)
+0014607337:0014607337:0014607337:0014607337,Extension,Purple,Extension (T)
+0012613307:0012613307:0012613307:0012613307,Extension,Green,Extension (C)
+0011603365:0011603365:0011603365:0011603365,Extension,Blue,Extension (G)
+0031623323:0031623323:0031623323:0031623323,Target Removal,Green,Target Removal
+0019612319:0019612319:0019612319:0019612319,Hybridization,Green,Hyb (High)
+0020636378:0020636378:0020636378:0020636378,Hybridization,Blue,Hyb (Medium)
+0023617335:0023617335:0023617335:0023617335,Hybridization,Black,Hyb (Low)
+0032629312:0032629312:0032629312:0032629312,Stringency,Red,String (PM)
+0033668307:0033668307:0033668307:0033668307,Stringency,Purple,String (MM)
+0026619332:0026619332:0026619332:0026619332,Non-Specific Binding,Red,NSB (Bgnd)
+0027624356:0027624356:0027624356:0027624356,Non-Specific Binding,Purple,NSB (Bgnd)
+0025617343:0025617343:0025617343:0025617343,Non-Specific Binding,Blue,NSB (Bgnd)
+0024616350:0024616350:0024616350:0024616350,Non-Specific Binding,Green,NSB (Bgnd)
+0034633358:0034633358:0034633358:0034633358,Non-Polymorphic,Red,NP (A)
+0016648324:0016648324:0016648324:0016648324,Non-Polymorphic,Purple,NP (T)
+0043641328:0043641328:0043641328:0043641328,Non-Polymorphic,Green,NP (C)
+0013642359:0013642359:0013642359:0013642359,Non-Polymorphic,Blue,NP (G)
+0028637363:0028637363:0028637363:0028637363,Restoration,Green,Restore
+```
 
