@@ -234,65 +234,7 @@ PsychArray/		5/28/15, 10:13:00 AM
 
 All processed on Rosalind image  
 
-`get-illumina-product-files.sh`
-
-
-```bash
-#!/usr/bin/env bash
-set -o errexit
-set -o nounset
-
-## get illumina data for Human* SNP arrays
-for i in \
-PsychArray \
-HumanCore \
-HumanCore-24 \
-HumanCoreExome \
-HumanCoreExome-24  \
-HumanCVD  \
-HumanExome \
-HumanGenotypingArrays \
-HumanOmni1-Quad \
-HumanOmni2-5Exome-8 \
-HumanOmni5-Quad \
-HumanOmni5Exome \
-HumanOmni5MExome \
-HumanOmni25 \
-HumanOmniExpress \
-HumanOmniExpress-24 \
-HumanOmniExpressExome \
-HumanOmniZhongHua-8; do
-wget -r -c -b \
-ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/${i};
-done
-```
-Not all of this works. We get Errors about file not existing.
-
-```
---2015-06-12 12:16:30--  ftp://webdata:*password*@ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray
-           => ‘ussd-ftp.illumina.com/Downloads/ProductFiles/.listing’
-Resolving ussd-ftp.illumina.com (ussd-ftp.illumina.com)... 66.192.10.36
-Connecting to ussd-ftp.illumina.com (ussd-ftp.illumina.com)|66.192.10.36|:21... connected.
-Logging in as webdata ... Logged in!
-==> SYST ... done.    ==> PWD ... done.
-==> TYPE I ... done.  ==> CWD (1) /Downloads/ProductFiles ... done.
-==> PASV ... done.    ==> LIST ... done.
-
-     0K ..                                                      374M=0s
-
-2015-06-12 12:16:35 (374 MB/s) - ‘ussd-ftp.illumina.com/Downloads/ProductFiles/.listing’ saved [2451]
-
-ussd-ftp.illumina.com/Downloads/ProductFiles/.listing: No such file or directory
-unlink: No such file or directory
---2015-06-12 12:16:35--  ftp://webdata:*password*@ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray
-           => ‘ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray’
-==> CWD not required.
-==> SIZE PsychArray ... done.
-==> PASV ... done.    ==> RETR PsychArray ...
-No such file ‘PsychArray’.
-```
-
-Jobs killed and now trying...
+getting the data ...  
 
 ```bash
 wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
