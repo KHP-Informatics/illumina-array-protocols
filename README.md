@@ -27,9 +27,13 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 
 ![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
 
-## The Flow
+## The WorkFlow
 
 *WORK FLOW PIC...*
+
+1. Sample DNA + Sample Info > Lab > Raw Data (iDats)  
+2. Raw Data (iDats) + Sample Info > Bioinformaticians > Genomestudio  
+3. Genomestudio > zCall > Quality Control > PLINK + QC Report  
 
 ## Illumina BeadArray Microarray Technology 
 
@@ -381,7 +385,7 @@ set -o nounset
 MY_FILE=${1}
 
 ## beadChip name 
-BEADCHIP=`basename ${MY_FILE} csv`
+BEADCHIP=`basename ${MY_FILE} .csv`
 
 ## remove header and tails and add new name for look-ups
 awk -F "," 'NR > 7 {print $0}' ${BEADCHIP} | grep -v ^00 | grep -v "Controls" | \
