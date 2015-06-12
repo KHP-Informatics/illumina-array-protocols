@@ -389,7 +389,6 @@ BWA & Indexed Genomes provided as part of [NGSeasy](https://github.com/KHP-Infor
 Assume `make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv` already run
 
 ```bash
-
 ## Genome (GATK Resources)
 GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
 
@@ -401,6 +400,10 @@ ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
 
 ## Run BWA
 time aln-fasta-bwa-docker.sh ${ARRAY_CSV} ${GENOME} 32
+```
+
+```
+some output
 ```
 
 Inside `bin/make-fasta-from-annotation-csv.sh`
