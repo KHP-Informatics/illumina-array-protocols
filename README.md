@@ -384,8 +384,10 @@ sys     0m3.007s
 
 ## BWA mapping
 
+BWA & Indexed Genomes provided as part of [NGSeasy](https://github.com/KHP-Informatics/ngseasy)  
+
 ```bash
-## Genome
+## Genome (GATK Resources)
 GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
 
 ## Run test
