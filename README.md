@@ -185,7 +185,7 @@ HumanOmniExpressExome/		7/11/14, 12:00:00 AM
 HumanOmniZhongHua-8/		2/23/15, 6:05:00 PM
 PsychArray/		5/28/15, 10:13:00 AM
 ```
-
+xs
 All on Rosalind  
 
 `get-illumina-product-files.sh`
