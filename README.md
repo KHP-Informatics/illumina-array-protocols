@@ -391,14 +391,16 @@ BEADCHIP=`basename ${MY_FILE} .csv`
 awk -F "," 'NR > 7 {print $0}' ${BEADCHIP}.csv | grep -v ^00 | grep -v "Controls" | \
 awk -F "," '{print $1"xSEQIDx"$2","$0}' > ${BEADCHIP}.txt
 
-## Get Probe A Only Variants
+## Get Probe A Only Variants fasta
 cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk ' $9 !~ /[ATCG]/ ' | \
 awk '{print ">"$1"\n"$7}' >  ${BEADCHIP}.single.probe.A.fasta
 
-## Get Probe A & B Variants
-cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk ' $9 !~ /[ATCG]/ ' | \
-awk '{print ">"$1"\n"$5}' >  ${BEADCHIP}.multi.probe.A.and.B.fasta
+## Get Probe A & B Variants fasta
+cat ${BEADCHIP}.txt  | sed '1d' | tr ',' '\t' | awk ' $9 ~ /[ATCG]/ ' | \
+awk '{print ">"$1"\n"$7"\n">"$1"\n"$9}' >  ${BEADCHIP}.multi.probe.A.and.B.fasta
 
+## Combine fasta files for mapping
+cat ${BEADCHIP}.single.probe.A.fasta ${BEADCHIP}.multi.probe.A.and.B.fasta > ${BEADCHIP}.fasta
 
 ```
 
