@@ -114,7 +114,7 @@ Using [NGSeasy](https://github.com/KHP-Informatics/ngseasy) Docker [compbio/ngse
 >Version: 0.7.12-r1039  
 >Contact: Heng Li <lh3@sanger.ac.uk>  
 
-```shell
+```bash
 ###################################
 ## BWA > samblaster > samtools
 #
@@ -381,3 +381,5 @@ real    0m5.014s
 user    0m5.431s
 sys     0m3.007s
 ```
+
+## BWA mapping
