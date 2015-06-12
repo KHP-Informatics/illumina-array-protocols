@@ -19,9 +19,9 @@ echo -e "\n>>>> START [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
 
 echo -e ".... Running [bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
-samtools sort -@ ${NCPU} -T temp_ -O sam -o ${array}.sam && \
-samtools index ${array}.sam && \
-rm ${array}.sam]\n"
+samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
+samtools index ${BEADCHIP}.sam && \
+rm ${BEADCHIP}.sam]\n"
 
 ## Run BWA 
 docker run --rm \
@@ -29,12 +29,11 @@ docker run --rm \
 -e HOME=/home/pipeman \
 -e USER=pipeman --user pipeman \
 -i -t compbio/ngseasy-bwa:1.0 /bin/bash -c \
-"bwa mem -t 32 -V -M -a ${refGenome} ${FASTA}.fasta | \
+"bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
-samtools sort -@ 32 -T temp_ -O sam -o ${array}.sam && \
-samtools index ${array}.sam && \
-rm ${array}.sam"
+samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
+samtools index ${BEADCHIP}.sam && \
+rm ${BEADCHIP}.sam"
 wait
 
 echo -e "\n>>>> END [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
-
