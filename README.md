@@ -418,9 +418,10 @@ echo -e "\n>>>>DONE [make-fasta-from-annotation-csv.sh ${1}]\n"
 sleep 1s
 ```
 
+**testing `make-fasta-from-annotation-csv.sh`**
 
 ```bash
-make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
+time make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 ```
 
 
