@@ -394,7 +394,7 @@ Assume `make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv` already r
 
 ```bash
 ## Genome (GATK Resources)
-GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37"  
+GENOME="/media/Data/ngs_resources/reference_genomes_b37/human_g1k_v37.fasta"  
 
 ## BeadArray Annotation .csv
 ARRAY_CSV="HumanCoreExome-24v1-0_A.csv"
