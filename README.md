@@ -379,7 +379,7 @@ set -o nounset
 # Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
 ###########################################################################################
 
-## USAGE: make-fasta-from-annotation-csv.sh <HumanCoreExome-24v1-0_A.csv>
+## USAGE: make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 ## input
 MY_FILE=${1}
@@ -388,13 +388,15 @@ MY_FILE=${1}
 BEADCHIP=`basename ${MY_FILE} .csv`
 
 ## remove header and tails and add new name for look-ups
-awk -F "," 'NR > 7 {print $0}' ${BEADCHIP} | grep -v ^00 | grep -v "Controls" | \
-awk '{print $1""$2"",$0}' > ${BEADCHIP}.txt
+awk -F "," 'NR > 7 {print $0}' ${BEADCHIP}.csv | grep -v ^00 | grep -v "Controls" | \
+awk -F "," '{print $1"x"$2","$0}' > ${BEADCHIP}.txt
 
 ## Get Probe A Only Variants
-
+cat ${BEADCHIP}.txt | tr ',' '\t' | awk ' $4 !~ /[ATCG]/ ' | \
+awk '{print ">"$1"."$2"\n"$3}' >  ${BEADCHIP}.single.probe.A.fasta
 
 ## Get Probe A & B Variants
+cat ${BEADCHIP}.txt
 
 #cut -d "," -f 1,2,6,8 mega_array_annotations.txt > mega_array_probe_seq.csv
 
