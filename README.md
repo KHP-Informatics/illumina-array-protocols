@@ -378,19 +378,19 @@ set -o nounset
 # Version 0.1
 # Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
 ###########################################################################################
-if test -z "$1"
-then
-  echo -e "....ERROR No Input File detected\n"
-  ehco -e "....USAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>"
-  sleep 1s
-  exit 1
+if test -z "$2"; then
+    echo -e "....ERROR No Input File detected\n"
+    ehco -e "....USAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>"
+    sleep 1s
+    exit 1
 fi
+
 ## USAGE: make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 ## input
 MY_FILE=${1}
 
-echo -e "....START [make-fasta-from-annotation-csv.sh ${1}\n"
+echo -e "\n....START [make-fasta-from-annotation-csv.sh ${1}\n"
 sleep 1s
 
 ## beadChip name 

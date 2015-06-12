@@ -8,9 +8,10 @@ set -o nounset
 # Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
 ###########################################################################################
 
-if test -z "$1"; then
-        echo -e "....ERROR No Input File detected\n"
-        ehco -e "....USAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>"
+if test -z "$2"; then
+        
+        echo -e "ERROR No Input File detected\n"
+        ehco -e "USAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>"
         sleep 1s
         exit 1
 fi
