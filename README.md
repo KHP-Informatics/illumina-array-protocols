@@ -384,6 +384,14 @@ sys     0m3.007s
 
 ## BWA mapping
 
+```bash
+## Genome
+GENOME="/media/Data/ngs_resources/reference_genomes_b3/human_g1k_v37.fasta"  
+
+## Run test
+time aln-fasta-bwa-docker.sh HumanCoreExome-24v1-0_A.csv ${GENOME} 32
+```
+
 `bin/make-fasta-from-annotation-csv.sh`
 
 ```sh
