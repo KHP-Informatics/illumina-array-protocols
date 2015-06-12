@@ -294,7 +294,7 @@ Jobs killed and now trying...
 wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
 ```
 
-## csv formats
+## Illumina CSV format
 
 **Header** `HumanCoreExome-24v1-0_A.csv`
 
@@ -352,4 +352,68 @@ tail -24 HumanCoreExome-24v1-0_A.csv
 0013642359:0013642359:0013642359:0013642359,Non-Polymorphic,Blue,NP (G)
 0028637363:0028637363:0028637363:0028637363,Restoration,Green,Restore
 ```
+## Get Variant Minimal Information
+
+Header:-  
+
+```
+IlmnID,Name,IlmnStrand,SNP,AddressA_ID,AlleleA_ProbeSeq,AddressB_ID,AlleleB_ProbeSeq,GenomeBuild,Chr,MapInfo,Ploidy,Species,Source,SourceVersion,SourceStrand,SourceSeq,TopGenomicSeq,BeadSetID
+```
+
+Get minimal info `IlmnID,Name,AlleleA_ProbeSeq,AlleleB_ProbeSeq`
+
+`make-fasta-from-annotation-csv.sh`
+
+```bash
+#!/usr/bin/env bash
+set -o errexit
+set -o nounset
+
+###########################################################################################
+# Program: make-fasta-from-annotation-csv.sh
+# Version 0.1
+# Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
+###########################################################################################
+
+## USAGE: make-fasta-from-annotation-csv.sh <HumanCoreExome-24v1-0_A.csv>
+
+## input
+MY_FILE=${1}
+
+## beadChip name 
+BEADCHIP=`basename ${MY_FILE} csv`
+
+## remove header and tails and add new name for look-ups
+awk -F "," 'NR > 7 {print $0}' ${BEADCHIP} | grep -v ^00 | grep -v "Controls" | \
+awk '{print $1""$2"",$0}' > ${BEADCHIP}.txt
+
+## Get Probe A Only Variants
+
+
+## Get Probe A & B Variants
+
+#cut -d "," -f 1,2,6,8 mega_array_annotations.txt > mega_array_probe_seq.csv
+
+```
+
+### Probe A
+
+```bash
+# Probe A only
+cat mega_array_probe_seq.csv | tr ',' '\t' | awk ' $4 !~ /[ATCG]/ ' > mega_array_probeAonly_seq.tsv
+
+# make fasta
+cat mega_array_probeAonly_seq.tsv | awk '{print ">"$1"."$2"\n"$3}' > mega_array_probeAonly_seq.fasta
+```
+
+### Probe B
+
+```bash
+# Probe A and B
+cat mega_array_probe_seq.csv | tr ',' '\t' | awk ' $4 ~ /[ATCG]/ ' > mega_array_probeAB_seq.tsv
+
+# make fasta
+cat mega_array_probeAB_seq.tsv | sed '1d' | awk '{print ">"$1"."$2"_probeA""\n"$3"\n"">"$1"."$2"_probeB""\n"$4}' > mega_array_probeAB_seq.fasta
+```
+
 
