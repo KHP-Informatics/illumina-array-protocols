@@ -32,6 +32,8 @@ These are the BeadChips we have experience in processing so far....
 |[HumanCoreExome-24 v1.0 BeadChip](http://support.illumina.com/downloads/humancoreexome-24-v1-0-product-files.html)  |
 |[HumanOmniExpressExome-8 v1.1 BeadChip](http://support.illumina.com/downloads/humanomniexpressexome-8v1-1_product_files.html)   |
 |[MEGA\_Consortium](link) (Early Access...)|
+|[PsychArray-B.csv](link)|
+|[humanexome-12v1_a.csv](link)|
 
 ## 1. BWA Mapping of Probe Sequences
 
@@ -49,14 +51,14 @@ More details soon....
 
 ### Illumina Array Annotations
 
-| Array | Download Link |
-|-------|---------------|
-|MEGA\_Consortium\_15063755_B2.csv | [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz) |
-|HumanCoreExome\-24v1\-0\_A.csv |[download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv) |
-|HumanOmniExpressExome\-8\-v1\-1\-C.csv | [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv) |
-| XXX |[download]()|
-| XXX |[download]()|
-| XXX |[download]()|
+| Array | Download Link | Fasta |
+|-------|---------------|------|
+|MEGA\_Consortium\_15063755_B2.csv | [download](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_annotations.txt.gz) |[fasta]()|
+|HumanCoreExome\-24v1\-0\_A.csv |[download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanCoreExome-24/Product_Files/HumanCoreExome-24v1-0_A.csv) |[fasta]()|
+|HumanOmniExpressExome\-8\-v1\-1\-C.csv | [download](ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniExpressExome/v1-1/HumanOmniExpressExome-8-v1-1-C.csv) |[fasta]()|
+| PsychArray-B.csv |[download]()|[fasta]()|
+| humanexome-12v1_a.csv |[download]()|[fasta]()|
+| XXX |[download]()|[fasta]()|
 
 ### BWA Mapping Results 
 
@@ -89,28 +91,19 @@ samtools index ${array}.sam && \
 rm ${array}.sam"
 ```
 
-**MEGA**    
-- [mega_array_seq_sorted.bam](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam)  
-- [mega_array_seq_sorted.bam.bai](https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings/mega_array_seq_sorted.bam.bai)  
-
-**OMNI**  
-- ...   
-- ...     
-
 ### Probe Lists  
 These lists provide data on probe mappings. We provide Illumina Probe Id's along with the
 number of time it maps to the genome. 
 
-| BeadArry | probe mapping | good probes|
-|-----|-----------|-------------------------|
-| MEGA\_Consortium\_15063755_B2 | [xxx]()| [xxx]()| 
-| HumanOmniExpressExome-8 v1.1 | [xxx]()| [xxx]()| 
-| HumanOmniExpress-24 v1.1 |[xxx]()| [xxx]()|  
-| HumanOmniExpress-24 v1.0 |[xxx]()| [xxx]()|  
-| HumanCoreExome-24 v1.0 |[xxx]()|[xxx]()|
+| Array | Fasta | BAM | Good probes | Bad probes |
+|-------|---------------|------|----|---|
+|MEGA\_Consortium\_15063755_B2.csv | [Fasta]() |[BAM]()|
+|HumanCoreExome\-24v1\-0\_A.csv | [Fasta]() |[BAM]()|
+|HumanOmniExpressExome\-8\-v1\-1\-C.csv | [Fasta]() |[BAM]()|
+|PsychArray-B.csv |[Fasta]()|[BAM]()|
+|humanexome-12v1_a.csv |[Fasta]()|[BAM]()|
 
-
-### Table 1. Number of variants after probe mapping
+#### Table 1. Number of variants after probe mapping
 
 | BeadArry | N SNP Start |N SNP End |
 |-----|-----------|-------------------------|
