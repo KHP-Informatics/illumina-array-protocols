@@ -30,7 +30,7 @@ Table of Contents
     * [3. Quality Control and Re-Calling](#3-quality-control-and-re-calling)
     * [No. Genotypes and Samples Processed](#no-genotypes-and-samples-processed)
     * [Scratch (Lab Book)](#scratch-lab-book)
-    * [csv formats](#csv-formats)ß
+    * [csv formats](#csv-formats)
 
 ## Quick Overview
 A set of scripts and protocols that we use to processing raw Illumina SNP array data.
