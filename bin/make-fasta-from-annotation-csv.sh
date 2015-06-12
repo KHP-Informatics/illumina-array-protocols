@@ -8,20 +8,12 @@ set -o nounset
 # Author: Stephen Newhouse (stephen.j.newhouse@gmail.com);
 ###########################################################################################
 
-if test -z "${1}"
-        then
-        echo -e "\nERROR No Input File detected\n"
-        echo -e "\nUSAGE: make-fasta-from-annotation-csv.sh <INPUT.csv>\nExiting"
-        sleep 1s
-        exit 1
-fi
-
 ## USAGE: make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 ## input
 MY_FILE=${1}
 
-echo -e "....START [make-fasta-from-annotation-csv.sh ${1}\n"
+echo -e "\n>>>>START [make-fasta-from-annotation-csv.sh ${1}]\n"
 sleep 1s
 
 ## beadChip name 
@@ -51,5 +43,5 @@ echo -e "....Make Fasta File for All Variants: single and mulitiple probe sequen
     cat ${BEADCHIP}.single.probe.A.fasta ${BEADCHIP}.multi.probe.A.and.B.fasta > ${BEADCHIP}.fasta
 
 ## END    
-echo -e "\n....DONE [make-fasta-from-annotation-csv.sh ${1}]"
+echo -e "\n>>>>DONE [make-fasta-from-annotation-csv.sh ${1}]\n"
 sleep 1s
