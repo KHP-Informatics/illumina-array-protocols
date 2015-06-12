@@ -185,3 +185,41 @@ HumanOmniExpressExome/		7/11/14, 12:00:00 AM
 HumanOmniZhongHua-8/		2/23/15, 6:05:00 PM
 PsychArray/		5/28/15, 10:13:00 AM
 ```
+
+All on Rosalind  
+
+`get-illumina-product-files.sh`
+
+
+```bash
+#!/usr/bin/env bash
+set -o errexit
+set -o nounset
+
+## get illumina data for Human* SNP arrays
+for i in \
+PsychArray \
+HumanCore \
+HumanCore-24 \
+HumanCoreExome \
+HumanCoreExome-24  \
+HumanCVD  \
+HumanExome \
+HumanGenotypingArrays \
+HumanOmni1-Quad \
+HumanOmni2-5Exome-8 \
+HumanOmni5-Quad \
+HumanOmni5Exome \
+HumanOmni5MExome \
+HumanOmni25 \
+HumanOmniExpress \
+HumanOmniExpress-24 \
+HumanOmniExpressExome \
+HumanOmniZhongHua-8; do
+wget -r -c -b \
+ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/${i};
+done
+```
+
+
+
