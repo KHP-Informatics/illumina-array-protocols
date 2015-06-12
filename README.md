@@ -1,5 +1,5 @@
 # [illumina](http://www.illumina.com/)-array-protocols
-** *work in progress..some links dont work and data and scritps to be added asap* **  
+** *work in progress..some links dont work and data and scripts to be added asap* **  
 ****
 
 # Protocols for processing illumina SNP arrays 
