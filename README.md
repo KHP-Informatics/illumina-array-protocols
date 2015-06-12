@@ -435,8 +435,7 @@ echo -e "\n>>>> START [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
 echo -e ".... Running [bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
 samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
-samtools index ${BEADCHIP}.sam && \
-rm ${BEADCHIP}.sam]\n"
+samtools index ${BEADCHIP}.sam]\n"
 
 ## Run BWA 
 docker run --rm \
@@ -447,8 +446,7 @@ docker run --rm \
 "bwa mem -t ${NCPU} -V -M -a ${REF_GENOME} ${BEADCHIP}.fasta | \
 samblaster --addMateTags --excludeDups | \
 samtools sort -@ ${NCPU} -T temp_ -O sam -o ${BEADCHIP}.sam && \
-samtools index ${BEADCHIP}.sam && \
-rm ${BEADCHIP}.sam"
+samtools index ${BEADCHIP}.sam"
 wait
 
 echo -e "\n>>>> END [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
