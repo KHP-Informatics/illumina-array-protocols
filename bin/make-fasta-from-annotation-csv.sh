@@ -14,7 +14,7 @@ set -o nounset
 MY_FILE=${1}
 
 echo -e "\n>>>> START [make-fasta-from-annotation-csv.sh ${1}]\n"
-sleep 1s
+#sleep 1s
 
 ## beadChip name 
 BEADCHIP=`basename ${MY_FILE} .csv`
@@ -44,4 +44,4 @@ echo -e ".... Make Fasta File for All Variants: single and mulitiple probe seque
 
 ## END    
 echo -e "\n>>>> DONE [make-fasta-from-annotation-csv.sh ${1}]\n"
-sleep 1s
+#sleep 1s
