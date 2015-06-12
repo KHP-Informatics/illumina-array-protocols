@@ -19,21 +19,24 @@ A set of scripts and protocols that we use to processing raw Illumina SNP array 
 
 ![illuminaCSPro](./figs/CSProLogo-new-Cropped-313x105.png)
 
-## Illumina Downloads Resource
-We provide links out to Illumina product data, as these are often not easliy found by the web/tech/google niave.  
+## Illumina BeadArray Microarray Technology 
 
-This links takes you to Illumina's download page, which provides access to product documentation and
-manifests.
+### [BeadArray Microarray Technology](http://www.illumina.com/technology/beadarray-technology.html) 
 
-- [Illumina Downloads](http://support.illumina.com/downloads.html)
+> "BeadArray microarray technology represents a fundamentally different approach to high-density array"  
+>     - *http://www.illumina.com/technology/beadarray-technology.html*
 
-## BeadArray Microarray Technology 
-[BeadArray Microarray Technology](http://www.illumina.com/technology/beadarray-technology.html) 
+### [Infinium HD Assay](http://www.illumina.com/technology/beadarray-technology/infinium-hd-assay.html)
 
-**Some videos**   
+>The Infinium HD Assay leverages proven chemistry and a robust BeadChip array platform to produce unrivaled data quality, superior call rates, and the most consistent reproducibility. From customized studies on targeted regions to large-scale genome-wide association studies, the flexible Infinium HD design offers a powerful solution for virtually any genetic analysis application
+
+**Discover the technology: [View Infinium Array animation video](http://www.youtube.com/embed/lVG04dAAyvY?iframe&rel=0&autoplay=1)**
+
+**Some more videos**   
 - [Illumina Vids 1](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=illumina+beadchip+technology&safe=off&tbm=vid)  
 - [Illumina Vids 2](https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=off&tbm=vid&q=illumina+beadchip)  
 
+### 
 These are the BeadChips we have experience in processing so far....
 
 | BeadChips |
@@ -45,6 +48,14 @@ These are the BeadChips we have experience in processing so far....
 |[MEGA\_Consortium](link) (Early Access...)|
 |[PsychArray-B.csv](link)|
 |[humanexome-12v1_a.csv](link)|
+
+## Illumina Downloads Resource
+We provide links out to Illumina product data, as these are often not easliy found by the web/tech/google naive.  
+
+This links takes you to Illumina's download page, which provides access to product documentation and
+manifests.
+
+- [Illumina Downloads](http://support.illumina.com/downloads.html)
 
 ## 1. BWA Mapping of Probe Sequences
 
