@@ -222,7 +222,7 @@ wget -r -c -b \
 ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/${i};
 done
 ```
-Not all of this works. We get Errors about file not existing 
+Not all of this works. We get Errors about file not existing.
 
 ```
 --2015-06-12 12:16:30--  ftp://webdata:*password*@ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray
@@ -246,6 +246,12 @@ unlink: No such file or directory
 ==> SIZE PsychArray ... done.
 ==> PASV ... done.    ==> RETR PsychArray ...
 No such file ‘PsychArray’.
+```
+
+Jobs killed and now trying...
+
+```bash
+wget -r -c -b ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/ProductFiles/;
 ```
 
 
