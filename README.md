@@ -368,14 +368,14 @@ time make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv
 
 
 ```
->>>>START [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
+>>>> START [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
 
-....Make new annotation file: remove header and ending guff and add new name for look-ups > [HumanCoreExome-24v1-0_A.txt]
-....Make Fasta File for Variants with single probe sequence (A) only > [HumanCoreExome-24v1-0_A.single.probe.A.fasta]
-....Make Fasta File for Variants with mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.multi.probe.A.and.B.fasta]
-....Make Fasta File for All Variants: single and mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.fasta]
+.... Make new annotation file: remove header and ending guff and add new name for look-ups > [HumanCoreExome-24v1-0_A.txt]
+.... Make Fasta File for Variants with single probe sequence (A) only > [HumanCoreExome-24v1-0_A.single.probe.A.fasta]
+.... Make Fasta File for Variants with mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.multi.probe.A.and.B.fasta]
+.... Make Fasta File for All Variants: single and mulitiple probe sequences (A & B) > [HumanCoreExome-24v1-0_A.fasta]
 
->>>>DONE [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
+>>>> DONE [make-fasta-from-annotation-csv.sh HumanCoreExome-24v1-0_A.csv]
 
 real    0m5.014s
 user    0m5.431s
