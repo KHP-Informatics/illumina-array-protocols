@@ -489,6 +489,11 @@ echo -e "\n>>>> END [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
 set -o errexit
 set -o nounset
 
+## Assume awscli installed and set up properly
+## This is set up specifically for our usage
+S3BUCKET="illumina-probe-mappings"
+BUCKET_URL="https://s3-eu-west-1.amazonaws.com/${S3BUCKET}"
+
 ## set names and get information
 SAM="HumanCoreExome-24v1-0_A.sam"
 SAMMD5=`md5sum ${SAM} | awk '{print $1}'`
@@ -501,12 +506,12 @@ if [[ ! -e "beadchip-sam-bwa-table.md" ]]; then
     echo -e "|----------|------|-----|" >> beadchip-sam-bwa-table.md
 fi
 
-BUCKET_URL="https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings"
-
 ## add to table 
 echo -e "| [${SAM}](${BUCKET_URL}/${SAM}) | ${SAN_SIZE} | ${SAMMD5}|" >> beadchip-sam-bwa-table.md
 
-## cpoy to amazon s3
-aws s3 cp ${SAM} s3://illumina-probe-mappings --acl 
+## copy to amazon s3 http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
+echo -e "\n.... Copying [${SAM}] to amazon s3 : [aws s3 cp ${SAM} s3://${S3BUCKET} --acl public-read]\n"
+
+   aws s3 cp ${SAM} s3://${S3BUCKET} --acl public-read 
 
 ```
