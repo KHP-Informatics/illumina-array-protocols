@@ -472,6 +472,41 @@ wait
 
 echo -e "\n>>>> END [aln-fasta-bwa-docker.sh ${1} ${2} ${3}]\n"
 ```
-/usr/local/bin/samblaster
-/usr/local/bin/bwa
-/usr/local/bin/samtools
+
+```
+## intsalled locally
+/usr/local/bin/samblaster  
+/usr/local/bin/bwa  
+/usr/local/bin/samtools  
+```
+
+**make table of results**
+
+`touch bin/make-beadchip-sam-bwa-table.sh`
+
+```bash
+#!/usr/bin/env bash
+set -o errexit
+set -o nounset
+
+## set names and get information
+SAM="HumanCoreExome-24v1-0_A.sam"
+SAMMD5=`md5sum ${SAM} | awk '{print $1}'`
+SAN_SIZE=`du -h ${SAM} | awk '{print $1}'`
+
+## make beadchip-sam-bwa-table.md
+if [[ ! -e "beadchip-sam-bwa-table.md" ]]; then
+    touch beadchip-sam-bwa-table.md
+    echo -e "| SAM File | Size | MD5 |" >> beadchip-sam-bwa-table.md
+    echo -e "|----------|------|-----|" >> beadchip-sam-bwa-table.md
+fi
+
+BUCKET_URL="https://s3-eu-west-1.amazonaws.com/illumina-probe-mappings"
+
+## add to table 
+echo -e "| [${SAM}](${BUCKET_URL}/${SAM}) | ${SAN_SIZE} | ${SAMMD5}|" >> beadchip-sam-bwa-table.md
+
+## cpoy to amazon s3
+aws s3 cp ${SAM} s3://illumina-probe-mappings --acl 
+
+```
