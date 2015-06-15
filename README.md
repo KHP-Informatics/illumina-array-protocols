@@ -668,8 +668,16 @@ do
 done	
 
 ## make update alleles file
+for i in ${FILES}
+do
+	${SRC}/create_update_allele_file.sh ${i}
+done
 
 ## run bwa
+for i in ${FILES}
+do
+	${SRC}/create_update_allele_file.sh ${i}
+done
 
 ```
 
