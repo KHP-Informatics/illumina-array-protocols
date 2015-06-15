@@ -686,7 +686,7 @@ awk -F, 'BEGIN {OFS="\t"} NR>8 && NF>6 {\
 
 ***********
 
-**bpm** only
+## **bpm** only
 
 No csv for these yet...
 
@@ -702,8 +702,7 @@ No csv for these yet...
 Found through trial and error - the internet once said tha a `.bpm` was a compressed file of some sort...giving up for now...FU ILLUMINA!  
 
 ```bash
-
-$ file -z -i cvdsnp55v1_a.bpm
+file -z -i cvdsnp55v1_a.bpm
 ```
 
 Result: **application/octet-stream; charset=binary**  
@@ -721,6 +720,5 @@ cvdsnp55v1_a.bpm: application/octet-stream; charset=binary
 ### tar xjv cvdsnp55v1_a.bz2
 ```
 
-```
 
 ***********
