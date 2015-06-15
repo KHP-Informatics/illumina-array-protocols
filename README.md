@@ -521,3 +521,125 @@ echo -e "\n.... Copying [${SAM}] to amazon s3 : [aws s3 cp ${SAM} s3://${S3BUCKE
 
 echo -e "\n>>>>DONE [make-beadchip-sam-bwa-table.sh ${1}]\n"   
 ```
+
+******
+
+### Chips : Status 
+
+**Date** `Mon Jun 15 09:57:10 UTC 2015`  
+This is what we have so far..  
+
+```
+HumanCNV370
+HumanCore
+HumanCore-24
+HumanCoreExome
+HumanCoreExome-24
+HumanCVD
+HumanExome
+HumanGenotypingArrays
+HumanMethylation27
+HumanMethylation450
+HumanOmni1-Quad
+HumanOmni25
+HumanOmni2-5Exome-8
+HumanOmni5Exome
+HumanOmni5MExome
+HumanOmni5-Quad
+HumanOmniExpress
+HumanOmniExpress-24
+```
+
+Not all chips have csv annotaions with sequences.  
+Not all .bpm files have sequence  
+
+**Moving csvs to project dirs** 
+
+```bash
+
+## Dirs on Rosalind Image
+
+## ILM Data 
+ILMDR="/media/Data/mega_array/iProductFiles/ussd-ftp.illumina.com/Downloads/ProductFiles"
+
+## Where we will stick em all
+MAPPING_DIR="/media/Data/mega_array/illumina-probe-mappings"
+
+## CHIPs 
+# HumanCNV370 : bpm only not copied
+# HumanCore : cp
+# HumanCore-24 : cp 
+# HumanCoreExome : cp
+# HumanCoreExome-24 : cp
+# HumanCVD : bpm only copied
+# HumanExome : cp
+# HumanMethylation27 : skipped
+# HumanMethylation450 : skipped
+# HumanOmni1-Quad : bpm only copied
+# HumanOmni25 : cp csv and bpm
+# HumanOmni2-5Exome-8 : cp csv and bpm
+# HumanOmni5Exome : cp
+# HumanOmni5MExome : egt and sample sheets only
+# HumanOmni5-Quad : cp 
+# HumanOmniExpress : cp
+
+
+BEADARRAY="HumanCore-24"
+
+ls ${ILMDR}/${BEADARRAY} | grep .csv$
+
+cp -v ${ILMDR}/${BEADARRAY}/HumanCore-12-v1-0-B.csv ${MAPPING_DIR}
+
+```
+
+Illumia are a bit lazy with docs and consitency, so a lot of the copying was
+done interactivley. 
+
+**Mon Jun 15 11:51:06 UTC 2015**
+
+`/media/Data/mega_array/illumina-probe-mappings`
+
+```
+├── bwa
+├── cvdsnp55v1_a.bpm
+├── HumanCore-12-v1-0-B.csv
+├── humancore-24-v1-0-manifest-file-a.csv
+├── HumanCoreExome-12-v1-0-D.csv
+├── HumanCoreExome-12v1-1_B.csv
+├── HumanCoreExome-12-v1-1-C.csv
+├── HumanCoreExome-24v1-0_A.csv
+├── HumanExome-12-v1-0-B.csv
+├── HumanExome-12-v1-1-B.csv
+├── HumanExome-12v1-2_A.csv
+├── HumanExome-12-v1-2-B.csv
+├── human_g1k_v37.fasta
+├── human_g1k_v37.fasta.amb
+├── human_g1k_v37.fasta.ann
+├── human_g1k_v37.fasta.bwt
+├── human_g1k_v37.fasta.fai
+├── human_g1k_v37.fasta.pac
+├── human_g1k_v37.fasta.sa
+├── humanomni1-quad_v1-0_h.bpm
+├── HumanOmni2-5-8-v1-0-D.csv
+├── HumanOmni2-5-8-v1-1-C.csv
+├── humanomni2-5-8-v1-2-a1-manifest-file-csv.zip
+├── HumanOmni2-5Exome-8-v1-0-B.csv
+├── HumanOmni2-5Exome-8-v1-1-A.csv
+├── humanomni25Exome-8v1_a.bpm
+├── HumanOmni5-4-v1-0-D.csv
+├── humanomni5-4-v1-1-a-manifest-csv.zip
+├── HumanOmni5Exome-4-v1-0-B.csv
+├── HumanOmni5Exome-4v1-1_A.csv
+├── HumanOmni5Exome-4-v1-1-B.csv
+├── humanomni5exome-4-v1-2-a-manifest-csv.zip
+├── HumanOmniExpress-12-v1-0-K.csv
+├── HumanOmniExpress-12-v1-1-C.csv
+├── MEGA_Consortium_15063755_B2.csv
+├── samblaster
+└── samtools
+
+``` 
+
+***********
+
+
