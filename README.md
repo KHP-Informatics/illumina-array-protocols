@@ -677,7 +677,7 @@ done
 
 ## run bwa
 
-${SRC}/aln-fasta-bwa.sh $HumanCore-12-v1-0-B.csv ../ref_genome/human_g1k_v37.fasta 32
+# ${SRC}/aln-fasta-bwa.sh HumanCore-12-v1-0-B.csv ../ref_genome/human_g1k_v37.fasta 32
 
 for i in ${FILES}
 do
