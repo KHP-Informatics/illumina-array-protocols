@@ -674,7 +674,13 @@ for i in ${FILES}
 do
 	${SRC}/create_update_allele_file.sh ${i}
 done
+```
 
+
+```bash
+#!/usr/bin/env bash
+set -o errexit
+set -o nounset
 ## run bwa
 
 # ${SRC}/aln-fasta-bwa.sh HumanCore-12-v1-0-B.csv ../ref_genome/human_g1k_v37.fasta 32
