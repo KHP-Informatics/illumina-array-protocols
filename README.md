@@ -676,11 +676,22 @@ do
 done
 ```
 
+set to run...home time!  
+
 
 ```bash
 #!/usr/bin/env bash
 set -o errexit
 set -o nounset
+
+SRC="/media/Data/mega_array/illumina-probe-mappings/illumina-array-protocols/bin"
+
+## where the manifests are
+ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
+
+## list files
+FILES=`ls ${ILM}`
+
 ## run bwa
 
 # ${SRC}/aln-fasta-bwa.sh HumanCore-12-v1-0-B.csv ../ref_genome/human_g1k_v37.fasta 32
@@ -689,8 +700,17 @@ for i in ${FILES}
 do
 	${SRC}/aln-fasta-bwa.sh ${i} ../ref_genome/human_g1k_v37.fasta 32
 done
-
 ```
+
+saved as `run-bwa-15-june-2015.sh` and run as:-  
+
+
+```bash
+nohup run-bwa-15-june-2015.sh
+```
+
+
+*********
 
 ### sep = "-ilmprb-"  
 
