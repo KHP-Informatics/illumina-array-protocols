@@ -678,7 +678,7 @@ done
 ## run bwa
 for i in ${FILES}
 do
-	${SRC}/create_update_allele_file.sh ${i}
+	${SRC}/create_update_allele_file.sh ${i} ../ref_genome/human_g1k_v37.fasta 32
 done
 
 ```

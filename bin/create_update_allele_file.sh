@@ -5,6 +5,8 @@ set -o nounset
 
 manifest=${1}
 
+echo -e ".... START Creating [${manifest}.update_alleles_file]"
+
 awk -F, 'BEGIN {OFS="\t"} NR>8 && NF>6 {\
         if ($3=="TOP") print $2, "A B", substr($4, 2, 1)" "substr($4, 4, 1) ;\
         else if ($3=="BOT" && $4=="[A/G]") print $2, "A B", "T C";\
@@ -20,4 +22,6 @@ awk -F, 'BEGIN {OFS="\t"} NR>8 && NF>6 {\
         else if ($3=="BOT" && $4=="[T/G]") print $2, "A B", "A C";\
         else if ($3=="BOT" && $4=="[T/C]") print $2, "A B", "A G";\
         else print $2, "A B", substr($4, 2, 1)" "substr($4, 4, 1)}'\
-        ${manifest} > ${manifest}.update_alleles_file 
+        ${manifest} > ${manifest}.update_alleles_file
+
+echo -e ".... DONE Creating [${manifest}.update_alleles_file]"        
