@@ -707,6 +707,8 @@ CTTGGCATCCTGTGGTTCAAAGTGTTTAGCTAGGACCAGTCCCAGCTGGT
 Filter SAM  
 Make List of Multi Mapping Probes  
 
+`cat ${FILE} | sed -e 's/-ilmprb-/"\t"/g'`
+
 *************
 
  **`bin/create_update_allele_file.sh`**
