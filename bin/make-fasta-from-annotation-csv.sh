@@ -23,7 +23,7 @@ BEADCHIP=`basename ${MY_FILE} .csv`
 echo -e ".... Make new annotation file: remove header and ending guff and add new name for look-ups > [${BEADCHIP}.txt]"
 
     awk -F "," 'NR > 7 {print $0}' ${BEADCHIP}.csv | grep -v ^00 | grep -v "Controls" | \
-            awk -F "," '{print $1"  "$2","$0}' > ${BEADCHIP}.txt
+            awk -F "," '{print $1"-ilmprb-"$2","$0}' > ${BEADCHIP}.txt
 
 ## Get Probe A Only Variants fasta
 echo -e ".... Make Fasta File for Variants with single probe sequence (A) only > [${BEADCHIP}.single.probe.A.fasta]"
