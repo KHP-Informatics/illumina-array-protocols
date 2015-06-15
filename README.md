@@ -680,6 +680,7 @@ http://docstore.mik.ua/orelly/unix3/upt/ch21_12.htm
 ***********
 
 
+ **`bin/create_update_allele_file.sh`**
 
 ```bash
 #!/usr/bin/env bash
