@@ -618,15 +618,15 @@ done interactivley.
 │   ├── HumanExome-12-v1-2-B.csv
 │   ├── HumanOmni2-5-8-v1-0-D.csv
 │   ├── HumanOmni2-5-8-v1-1-C.csv
-│   ├── humanomni2-5-8-v1-2-a1-manifest-file-csv.zip
+│   ├── HumanOmni25-8v1-2_A1.csv
 │   ├── HumanOmni2-5Exome-8-v1-0-B.csv
 │   ├── HumanOmni2-5Exome-8-v1-1-A.csv
 │   ├── HumanOmni5-4-v1-0-D.csv
-│   ├── humanomni5-4-v1-1-a-manifest-csv.zip
+│   ├── HumanOmni5-4v1-1_A.csv
 │   ├── HumanOmni5Exome-4-v1-0-B.csv
 │   ├── HumanOmni5Exome-4v1-1_A.csv
 │   ├── HumanOmni5Exome-4-v1-1-B.csv
-│   ├── humanomni5exome-4-v1-2-a-manifest-csv.zip
+│   ├── HumanOmni5Exome-4v1-2_A.csv
 │   ├── HumanOmniExpress-12-v1-0-K.csv
 │   ├── HumanOmniExpress-12-v1-1-C.csv
 │   └── MEGA_Consortium_15063755_B2.csv
@@ -641,9 +641,20 @@ done interactivley.
 └── scratch
     ├── cvdsnp55v1_a.bpm
     ├── humanomni1-quad_v1-0_h.bpm
-    └── humanomni25Exome-8v1_a.bpm
+    └── humanomni25Exome-8v1_a.bpmpm
 
 ``` 
+
+**bpm** only
+
+```
+└── scratch
+    ├── cvdsnp55v1_a.bpm
+    ├── humanomni1-quad_v1-0_h.bpm
+    └── humanomni25Exome-8v1_a.bpm
+
+```
+
 
 ***********
 
