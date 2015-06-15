@@ -686,6 +686,11 @@ done
 
 ```
 
+To Do:-
+
+Filter SAM  
+Make List of Multi Mapping Probes  
+
 *************
 
  **`bin/create_update_allele_file.sh`**
