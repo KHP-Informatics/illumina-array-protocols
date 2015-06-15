@@ -647,8 +647,31 @@ done interactivley.
 
 ``` 
 
+## Make fasta, create update allele file and run bwa
+
+```bash
 
 
+## where me scripts are
+SRC="/media/Data/mega_array/illumina-probe-mappings/illumina-array-protocols/bin"
+
+## where the manifests are
+ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
+
+## list files
+FILES=`ls ${ILM}`
+
+## make fasta files
+for i in ${FILES}
+do
+	${SRC}/make-fasta-from-annotation-csv.sh ${i}
+done	
+
+## make update alleles file
+
+## run bwa
+
+```
 
  **`bin/create_update_allele_file.sh`**
 
