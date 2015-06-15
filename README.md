@@ -600,43 +600,48 @@ done interactivley.
 `/media/Data/mega_array/illumina-probe-mappings`
 
 ```
-├── bwa
-├── cvdsnp55v1_a.bpm
-├── HumanCore-12-v1-0-B.csv
-├── humancore-24-v1-0-manifest-file-a.csv
-├── HumanCoreExome-12-v1-0-D.csv
-├── HumanCoreExome-12v1-1_B.csv
-├── HumanCoreExome-12-v1-1-C.csv
-├── HumanCoreExome-24v1-0_A.csv
-├── HumanExome-12-v1-0-B.csv
-├── HumanExome-12-v1-1-B.csv
-├── HumanExome-12v1-2_A.csv
-├── HumanExome-12-v1-2-B.csv
-├── human_g1k_v37.fasta
-├── human_g1k_v37.fasta.amb
-├── human_g1k_v37.fasta.ann
-├── human_g1k_v37.fasta.bwt
-├── human_g1k_v37.fasta.fai
-├── human_g1k_v37.fasta.pac
-├── human_g1k_v37.fasta.sa
-├── humanomni1-quad_v1-0_h.bpm
-├── HumanOmni2-5-8-v1-0-D.csv
-├── HumanOmni2-5-8-v1-1-C.csv
-├── humanomni2-5-8-v1-2-a1-manifest-file-csv.zip
-├── HumanOmni2-5Exome-8-v1-0-B.csv
-├── HumanOmni2-5Exome-8-v1-1-A.csv
-├── humanomni25Exome-8v1_a.bpm
-├── HumanOmni5-4-v1-0-D.csv
-├── humanomni5-4-v1-1-a-manifest-csv.zip
-├── HumanOmni5Exome-4-v1-0-B.csv
-├── HumanOmni5Exome-4v1-1_A.csv
-├── HumanOmni5Exome-4-v1-1-B.csv
-├── humanomni5exome-4-v1-2-a-manifest-csv.zip
-├── HumanOmniExpress-12-v1-0-K.csv
-├── HumanOmniExpress-12-v1-1-C.csv
-├── MEGA_Consortium_15063755_B2.csv
-├── samblaster
-└── samtools
+./
+├── bin
+│   ├── bwa
+│   ├── samblaster
+│   └── samtools
+├── illumina_manifest_csv
+│   ├── HumanCore-12-v1-0-B.csv
+│   ├── humancore-24-v1-0-manifest-file-a.csv
+│   ├── HumanCoreExome-12-v1-0-D.csv
+│   ├── HumanCoreExome-12v1-1_B.csv
+│   ├── HumanCoreExome-12-v1-1-C.csv
+│   ├── HumanCoreExome-24v1-0_A.csv
+│   ├── HumanExome-12-v1-0-B.csv
+│   ├── HumanExome-12-v1-1-B.csv
+│   ├── HumanExome-12v1-2_A.csv
+│   ├── HumanExome-12-v1-2-B.csv
+│   ├── HumanOmni2-5-8-v1-0-D.csv
+│   ├── HumanOmni2-5-8-v1-1-C.csv
+│   ├── humanomni2-5-8-v1-2-a1-manifest-file-csv.zip
+│   ├── HumanOmni2-5Exome-8-v1-0-B.csv
+│   ├── HumanOmni2-5Exome-8-v1-1-A.csv
+│   ├── HumanOmni5-4-v1-0-D.csv
+│   ├── humanomni5-4-v1-1-a-manifest-csv.zip
+│   ├── HumanOmni5Exome-4-v1-0-B.csv
+│   ├── HumanOmni5Exome-4v1-1_A.csv
+│   ├── HumanOmni5Exome-4-v1-1-B.csv
+│   ├── humanomni5exome-4-v1-2-a-manifest-csv.zip
+│   ├── HumanOmniExpress-12-v1-0-K.csv
+│   ├── HumanOmniExpress-12-v1-1-C.csv
+│   └── MEGA_Consortium_15063755_B2.csv
+├── ref_genome
+│   ├── human_g1k_v37.fasta
+│   ├── human_g1k_v37.fasta.amb
+│   ├── human_g1k_v37.fasta.ann
+│   ├── human_g1k_v37.fasta.bwt
+│   ├── human_g1k_v37.fasta.fai
+│   ├── human_g1k_v37.fasta.pac
+│   └── human_g1k_v37.fasta.sa
+└── scratch
+    ├── cvdsnp55v1_a.bpm
+    ├── humanomni1-quad_v1-0_h.bpm
+    └── humanomni25Exome-8v1_a.bpm
 
 ``` 
 
