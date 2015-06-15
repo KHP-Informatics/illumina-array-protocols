@@ -548,6 +548,7 @@ HumanOmni5MExome
 HumanOmni5-Quad
 HumanOmniExpress
 HumanOmniExpress-24
+HumanOmniExpressExome
 ```
 
 Not all chips have csv annotaions with sequences.  
@@ -582,7 +583,7 @@ MAPPING_DIR="/media/Data/mega_array/illumina-probe-mappings"
 # HumanOmni5MExome : egt and sample sheets only
 # HumanOmni5-Quad : cp 
 # HumanOmniExpress : cp
-
+# HumanOmniExpressExome : cp
 
 BEADARRAY="HumanCore-24"
 
@@ -653,11 +654,13 @@ done interactivley.
     ├── humanomni1-quad_v1-0_h.bpm
     └── humanomni25Exome-8v1_a.bpm
 
+cvdsnp55v1_a.gz
+
 ```
 
 ## Extracting an Illumina Manifest (.bpm) file 
 
-Found through trial and error - the internet once revieled tha a `.bpm` was a compressed file of some sort...
+Found through trial and error - the internet once revieled tha a `.bpm` was a compressed file of some sort...giving up for now...FU ILLUMINA!  
 
 ```bash
 
