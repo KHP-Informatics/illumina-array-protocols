@@ -646,41 +646,7 @@ done interactivley.
 
 ``` 
 
-**bpm** only
 
-```
-└── scratch
-    ├── cvdsnp55v1_a.bpm
-    ├── humanomni1-quad_v1-0_h.bpm
-    └── humanomni25Exome-8v1_a.bpm
-
-cvdsnp55v1_a.gz
-
-```
-
-## Extracting an Illumina Manifest (.bpm) file 
-
-Found through trial and error - the internet once revieled tha a `.bpm` was a compressed file of some sort...giving up for now...FU ILLUMINA!  
-
-```bash
-
-$ file -z -i cvdsnp55v1_a.bpm
-
-cvdsnp55v1_a.bpm: application/octet-stream; charset=binary
-
-http://docstore.mik.ua/orelly/unix3/upt/ch21_12.htm  
-
-
-#### DONT WORK 
-## rename or copy bpm to bz2
-### cp -v cvdsnp55v1_a.bpm cvdsnp55v1_a.bz2
-## extract
-### tar xjv cvdsnp55v1_a.bz2
-
-
-```
-
-***********
 
 
  **`bin/create_update_allele_file.sh`**
@@ -718,3 +684,43 @@ awk -F, 'BEGIN {OFS="\t"} NR>8 && NF>6 {\
 
 ```
 
+***********
+
+**bpm** only
+
+No csv for these yet...
+
+```
+└── scratch
+    ├── cvdsnp55v1_a.bpm
+    ├── humanomni1-quad_v1-0_h.bpm
+    └── humanomni25Exome-8v1_a.bpm
+```
+
+## Extracting an Illumina Manifest (.bpm) file 
+
+Found through trial and error - the internet once said tha a `.bpm` was a compressed file of some sort...giving up for now...FU ILLUMINA!  
+
+```bash
+
+$ file -z -i cvdsnp55v1_a.bpm
+```
+
+Result: **application/octet-stream; charset=binary**  
+
+```
+cvdsnp55v1_a.bpm: application/octet-stream; charset=binary
+```
+
+```
+##http://docstore.mik.ua/orelly/unix3/upt/ch21_12.htm  
+#### DONT WORK 
+## rename or copy bpm to bz2
+### cp -v cvdsnp55v1_a.bpm cvdsnp55v1_a.bz2
+## extract
+### tar xjv cvdsnp55v1_a.bz2
+```
+
+```
+
+***********
