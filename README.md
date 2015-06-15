@@ -690,7 +690,8 @@ SRC="/media/Data/mega_array/illumina-probe-mappings/illumina-array-protocols/bin
 ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
 
 ## list files
-FILES=`ls ${ILM}`
+FILES=`ls ${ILM} ## this was silly - it read ALL bloody files!
+`
 
 ## run bwa
 
@@ -706,7 +707,7 @@ saved as `run-bwa-15-june-2015.sh` and run as:-
 
 
 ```bash
-nohup run-bwa-15-june-2015.sh
+nohup ./run-bwa-15-june-2015.sh &
 ```
 
 
