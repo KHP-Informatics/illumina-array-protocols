@@ -584,6 +584,7 @@ MAPPING_DIR="/media/Data/mega_array/illumina-probe-mappings"
 # HumanOmni5-Quad : cp 
 # HumanOmniExpress : cp
 # HumanOmniExpressExome : cp
+# HumanOmniZhongHua-8 : CHINESE VARIANTS
 
 BEADARRAY="HumanCore-24"
 
