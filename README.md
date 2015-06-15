@@ -649,6 +649,8 @@ done interactivley.
 
 ## Make fasta, create update allele file and run bwa
 
+**Mon 15 Jun 2015 15:52:55 BST**  
+
 ```bash
 
 
@@ -680,6 +682,8 @@ do
 done
 
 ```
+
+*************
 
  **`bin/create_update_allele_file.sh`**
 
