@@ -1330,6 +1330,10 @@ Chr X is top hit (most frequent chromosome probe is mapped to).
 
 Should we trust these variants? I do not think so.
 
+If illumina technology is based on hybridisation, then we really can not rely on data from 
+multi-mapping probes. Unless, Illumina protocols and methods are **PERFECT** 
+and error free. 
+
 
 **now make a file**
 
