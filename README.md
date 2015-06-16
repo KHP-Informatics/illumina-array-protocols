@@ -1213,13 +1213,99 @@ Grep CIGAR string **`50M`** and QUAL `>0`
 
 ```bash
 grep -w "50M" ${ARRAY}.sam | awk '$5>0' | wc -l 
-grep -w "50M" ${ARRAY}.sam | awk '$5>0' | head
 
+## 1. Full length of Probes maps to genome CIGAR 50M
+grep -w "50M" ${ARRAY}.sam | \
+awk 'BEGIN{OFS="\t";} {print $1, $3, $4, $6, $10}' | \
+sed -e 's/-ilmprb-/\t/g' | \
+awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
+```
+
+Probes hit > 1000 Times
+
+```
+   1055 rs4413915-138_T_F_2304127707
+   1044 rs183751916-138_B_F_2304123777
+   1040 5:74635225-G-C-0_B_R_2304214204
+   1012 rs7336004-138_T_F_2295997788
+   1010 rs184037461-138_B_R_2304123844
+   1010 rs141419953-138_B_F_2304118828
+   1008 1:205656202-C-G-0_B_F_2304167124
+   1007 rs149787424-138_B_R_2304121996
+   1006 6:142745735-T-A-0_B_R_2304216672
+   1006 16:11923036-G-C-0_T_R_2304225522
+   1006 15:63391720-C-G-0_B_R_2304192211
+   1005 rs75939001-138_B_F_2304134512
+   1005 rs187562876-138_T_F_2304124641
+   1005 rs12399807-138_T_F_2304116937
+   1005 8:40472371-A-T-0_T_R_2304181745
+   1004 rs61993646-138_T_R_2296558163
+   1004 rs192449672-138_B_F_2300056085
+   1004 rs183642112-138_T_F_2304123737
+   1004 8:130618511-A-T-0_B_R_2304218964
+   1003 rs192877536-138_T_R_2304125900
+```
+
+Lets look at the top hit
+
+```bash
+grep "rs4413915-138_T_F_2304127707" ${ARRAY}.sam | awk '$10 ~ "[ATGC]"' 
+```
+
+```
+rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeB     0       1       89793532        0       50M     *       0       0       ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG      *       NM:i:1  MD:Z:49C0       AS:i:49 XS:i:49 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeA     0       3       133402777       0       50M     *       0       0       ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC      *       NM:i:0  MD:Z:50 AS:i:50 XS:i:50 XR:Z:dna:chromosome chromosome:GRCh37:3:1:198022430:1
+```
+
+Hits CHR 1:89793532 and 3:133402777
+
+The sequence...
+
+A:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG`  
+M:`||||||||||||||||||||||||||||||||||||||||||||||||||`  
+B:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC`
+
+Seq looks the same....BLAT...  
+
+**BLAT Search Results**  
+**BLAT: http://genome.ucsc.edu/cgi-bin/hgBlat**
+
+Just look. This is a snap shot of the results. This probe hits multiple regions. 
+
+```
+BLAT Search Results
+
+   ACTIONS      QUERY           SCORE START  END QSIZE IDENTITY CHRO STRAND  START    END      SPAN
+---------------------------------------------------------------------------------------------------
+browser details YourSeq           49     1    49    50 100.0%     X   -   80217749  80217797     49
+browser details YourSeq           49     1    49    50 100.0%     X   -   80235666  80235714     49
+browser details YourSeq           49     1    49    50 100.0%     X   +   80285055  80285103     49
+browser details YourSeq           48     1    50    50  98.0%     1   -  115560057 115560106     50
+browser details YourSeq           48     1    50    50  98.0%     2   +  146542664 146542713     50
+browser details YourSeq           47     3    49    50 100.0%     X   -   67600656  67600702     47
+```
+
+**now make a file**
+
+```bash
+## 1. Full length of Probes maps to genome CIGAR 50M
+grep -w "50M" ${ARRAY}.sam | \
+awk 'BEGIN{OFS="\t";} {print $1, $3, $4, $6, $10}' | \
+sed -e 's/-ilmprb-/\t/g' > ${ARRAY}.probe_mapping
+
+awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
+```
+
+
+```bash
 ## doing it with samtools
 samtools view -S -q 0 ${ARRAY}.sam | \
 awk 'BEGIN{OFS="\t";} {print $1, $3, $4, $6, $10}' | sed -e 's/-ilmprb-/\t/g' | \
 awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
 ```
+
+
+
 
 ```bash
 ## Count N VAR Orginal
