@@ -1100,10 +1100,49 @@ done
 
 ## Multi-mapping Probes
 
+Focus on MEGA Array
+
+```bash
+more MEGA_Consortium_15063755_B2.sam.flagstat
+```
+
+```
+2657065 + 0 in total (QC-passed reads + QC-failed reads)
+768483 + 0 secondary
+0 + 0 supplementary
+253125 + 0 duplicates
+2657048 + 0 mapped (100.00%:-nan%)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (-nan%:-nan%)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (-nan%:-nan%)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+```
+
 ```bash
 ## go to dir
 cd /media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv
+
+## List MEGA* files
+ls | grep MEGA
 ```
+
+```
+MEGA_Consortium_15063755_B2.csv ## annotation from Illumina
+MEGA_Consortium_15063755_B2.fasta ## probe fasta seqs
+MEGA_Consortium_15063755_B2.sam ## BWA SAM File
+MEGA_Consortium_15063755_B2.sam.flagstat ## Flagstats 
+MEGA_Consortium_15063755_B2.txt ## Annotation File (remove Illumina header and tail)
+```
+
+
+
+
+
+
 
 
 *************
