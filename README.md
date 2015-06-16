@@ -1006,10 +1006,111 @@ echo -e "\n\n>>>>>>>>>> BWA Aligning Sh!t >>>>>>>>>>\n\n"
 done 
 ```
 
+count N lines in .txt annotation files 
+
+```bash
+wc -l *txt | awk '{print $1-1"\t"$2}' | sort -grk1 
+```
+
+#### Number of Varians (Lines) for Each BeadArray processed
+
+```bash
+## make md table
+echo -e "| Number of Variants (Lines) | BeadArray File |" >> table_n_lines_annotations.md;
+
+echo -e "|----------|---------|" >> table_n_lines_annotations.md;
+
+wc -l *txt | awk '{print $1-1"\t"$2}' | sort -grk1 | \
+awk '{print "|",$1,"|"$2,"|"}' >> table_n_lines_annotations.md;
+```
+
+
+
+| Number of Variants (Lines) | BeadArray File |
+|----------|---------|
+| 4641218 |HumanOmni5Exome-4-v1-1-B.txt |
+| 4641218 |HumanOmni5Exome-4v1-1_A.txt |
+| 4548474 |HumanOmni5Exome-4v1-2_A.txt |
+| 4511703 |HumanOmni5Exome-4-v1-0-B.txt |
+| 4301332 |HumanOmni5-4-v1-0-D.txt |
+| 4284426 |HumanOmni5-4v1-1_A.txt |
+| 2583651 |HumanOmni2-5Exome-8-v1-1-A.txt |
+| 2567845 |HumanOmni2-5Exome-8-v1-0-B.txt |
+| 2391739 |HumanOmni2-5-8-v1-1-C.txt |
+| 2379855 |HumanOmni2-5-8-v1-0-D.txt |
+| 2338671 |HumanOmni25-8v1-2_A1.txt |
+| 1705969 |MEGA\_Consortium\_15063755_B2.txt |
+| 964193 |HumanOmniExpressExome-8-v1-2-B.txt |
+| 964193 |HumanOmniExpressExome-8v1-2_A.txt |
+| 958178 |HumanOmniExpressExome-8-v1-1-C.txt |
+| 951117 |HumanOmniExpressExome-8-v1-0-B.txt |
+| 900015 |HumanOmniZhongHua-8-v1-0-C.txt |
+| 894517 |HumanOmniZhongHua-8-v1-1-B.txt |
+| 730525 |HumanOmniExpress-12-v1-0-K.txt |
+| 719665 |HumanOmniExpress-12-v1-1-C.txt |
+| 571054 |PsychArray-B.txt |
+| 571054 |PsychArray_A.txt |
+| 547644 |HumanCoreExome-24v1-0_A.txt |
+| 542585 |HumanCoreExome-12-v1-1-C.txt |
+| 542585 |HumanCoreExome-12v1-1_B.txt |
+| 538448 |HumanCoreExome-12-v1-0-D.txt |
+| 306670 |humancore-24-v1-0-manifest-file-a.txt |
+| 298930 |HumanCore-12-v1-0-B.txt |
+| 247870 |HumanExome-12-v1-0-B.txt |
+| 244770 |HumanExome-12-v1-2-B.txt |
+| 244770 |HumanExome-12v1-2_A.txt |
+| 242901 |HumanExome-12-v1-1-B.txt |
+
+## Samtools flagstat
+
+Testing...
+
+```bash
+samtools flagstat HumanOmni5Exome-4-v1-1-B.sam
+```
+
+```
+5131847 + 0 in total (QC-passed reads + QC-failed reads)
+314599 + 0 secondary
+0 + 0 supplementary
+310100 + 0 duplicates
+5131477 + 0 mapped (99.99%:-nan%)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (-nan%:-nan%)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (-nan%:-nan%)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+```
+
+Note secondary and duplicate hits...
+
+We will now generate these stats for all files..
+
+```bash
+SAM=`ls | grep .sam$`
+
+for i in ${SAM}
+do
+	samtools flagstat ${i} > ${i}.flagstat
+done	
+```
+
+## Multi-mapping Probes
+
+```bash
+## go to dir
+cd /media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv
+```
+
+
+*************
 
 ## Thoughts on BPM only Data
 Illumina are either lazy or forgetful or these are "special" and Illumina, with their 
-collaboratotrs, don not want to share the data.
+collaborators, don not want to share the data.
 
 *************
 
