@@ -9,6 +9,7 @@
 **Date: June 2015**  
 **Authors: Stephen Newhouse, Hamel Patel, Amos Folarin, Charles Curtis**
 
+## Table of Contents
 [toc]
 
 ## Quick Overview
@@ -197,7 +198,7 @@ Copyright (C) 2015 Hamel Patel, Amos Folarin & Stephen Jeffrey Newhouse
 
 ********
 
-## Scratch (Lab Book)
+# Scratch (Steve's Lab Book)
 > Dr Stephen Newhouse <stephen.j.newhouse@gmail.com>  
 > Lab Book and messing around - this will change and/or be removed soon  
 > Code examples will be added to `./bin`
@@ -713,7 +714,7 @@ nohup ./run-bwa-15-june-2015.sh &
 
 *********
 
-### sep = "-ilmprb-"  
+Fasta IDs sep  `sep = "-ilmprb-"`  
 
 ```
 >1KG_1_100177980-0_M_R_2115812812-ilmprb-1KG_1_100177980
@@ -728,13 +729,283 @@ CCTTATGCCAAAACGTATGAGGGTAGAAGAGAGATTTTGAGAGAGAGAGA
 CTTGGCATCCTGTGGTTCAAAGTGTTTAGCTAGGACCAGTCCCAGCTGGT
 ```
 
-
 **To Do:-**  
 
 Filter SAM  
 Make List of Multi Mapping Probes  
 
 `cat ${FILE} | sed -e 's/-ilmprb-/"\t"/g'`
+
+## Tue 16 Jun 2015 10:10:17 BST
+
+All files donwloaded from illumina.  
+
+#### List of Illumina Downloads 
+
+```bash
+cd /media/Data/mega_array/iProductFiles
+tree -d
+```
+
+```
+##ubuntu@ngseasy-sjn:/media/Data/mega_array/iProductFiles$ tree -d
+.
+└── ussd-ftp.illumina.com
+    └── Downloads
+        └── ProductFiles
+            ├── BovineHD
+            ├── BovineLD
+            │   ├── BovineLDv1-1
+            │   └── v2-0
+            ├── BovineSNP50
+            │   └── BovineSNP50v2ProductFiles
+            ├── bpmFiles
+            ├── CanineHD
+            ├── CanineSNP20
+            ├── CRCArray
+            ├── CytoSNP
+            ├── CytoSNP12-FFPE
+            │   └── HmanHap300
+            ├── CytoSNP-850K
+            │   ├── Rev_B_Product_Files
+            │   └── v1-0
+            ├── HumanCNV370
+            │   └── HumanCNV370-Duo
+            ├── HumanCore
+            ├── HumanCore-24
+            │   └── v1-0
+            │       └── humancore-24-v1-0-demo-12-a
+            │           ├── CNV
+            │           └── Data
+            ├── HumanCoreExome
+            │   ├── HumanCoreExome-12v1-1
+            │   ├── v1-0
+            │   └── v1-1
+            ├── HumanCoreExome-24
+            │   ├── Product_Files
+            │   ├── Product_Support_Files
+            │   └── v1-0
+            ├── HumanCVD
+            ├── HumanExome
+            │   ├── ProductFiles
+            │   ├── ProductSupportFiles
+            │   ├── v1-0
+            │   ├── v1-1
+            │   └── v1-2
+            ├── HumanGenotypingArrays
+            ├── HumanMethylation27
+            ├── HumanMethylation450
+            ├── HumanOmni1-Quad
+            ├── HumanOmni25
+            │   ├── v1-0
+            │   ├── v1-1
+            │   └── v1-2
+            ├── HumanOmni2-5Exome-8
+            │   ├── Product_Files_v1-1
+            │   ├── Product_Support_Files_v1-1
+            │   ├── v1-0
+            │   └── v1-1
+            ├── HumanOmni5Exome
+            │   ├── v1-0
+            │   ├── v1-1
+            │   └── v1-2
+            ├── HumanOmni5MExome
+            ├── HumanOmni5-Quad
+            │   ├── v1-0
+            │   └── v1-1
+            ├── HumanOmniExpress
+            │   ├── v1-0
+            │   └── v1-1
+            ├── HumanOmniExpress-24
+            │   ├── v1-0
+            │   └── v1-1
+            │       ├── HumanOmniExpress-24v1-1_A_Demo_12
+            │       │   ├── CNV
+            │       │   └── Data
+            │       └── PopulationReports
+            ├── HumanOmniExpressExome
+            │   ├── ProductFiles
+            │   ├── ProductSupportFiles
+            │   │   └── v1-0
+            │   ├── v1-0
+            │   ├── v1-1
+            │   └── v1-2
+            ├── HumanOmniZhongHua-8
+            │   ├── v1-0
+            │   ├── v1-1
+            │   └── v1-2
+            ├── MaizeSNP50
+            ├── OncoArray-500K
+            │   └── v1-0
+            ├── OvineSNP50
+            ├── PorcineSNP60
+            │   ├── PorcineSNP60_v1ProductFiles
+            │   └── PorcineSNP60_v2ProductFiles
+            └── PsychArray
+                └── v1-0
+```
+
+### BWA aln of outstanding data sets
+
+These are what are left to do for Human BeadArray products, where csv are available.
+```
+PsychArray
+HumanOmniZhongHua-8
+```
+
+copy csv to `/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv` 
+
+List **`PsychArray `**
+
+```bash
+## PsychArray
+cd /media/Data/mega_array/iProductFiles/ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray
+tree 
+```
+
+```
+.
+├── infinium-hts-automated-sample-sheet.csv
+├── infinium-hts-manual-adjustable-spacer-pipette-sample-sheet.csv
+├── infinium-hts-manual-single-channel-pipette-sample-sheet.csv
+├── PsychArray_A_annotated.txt
+├── PsychArray_A.bed
+├── PsychArray_A.bpm
+├── PsychArray_A_ClusterFile.egt
+├── PsychArray_A.csv
+├── PsychArray_A_Demo_12.zip
+├── PsychArray_A_LocusReport.txt
+├── PsychArray_A_Reproducibility and Heritability Report.csv
+├── PsychArray_A_ReproducibilityandHeritabilityReport.csv
+├── PsychArray_A_SampleSheet_Demo_12.csv
+├── psycharray-population-reports-full.zip
+├── psycharray-population-reports-maf-copy-numbers.zip
+└── v1-0
+    ├── PsychArray-B.bpm
+    ├── PsychArray-B.csv
+    ├── PsychArray-B-mapping-comments.txt
+    ├── PsychArray-B-mapping-comments.zip
+    ├── PsychArray-B-prior-product-modifications.txt
+    ├── PsychArray-B-prior-product-modifications.zip
+    ├── psycharray-demo-sample-sheet-a-12-samples.zip
+    ├── psycharray-loci-name-to-rsid-conversion.txt
+    └── psycharray-loci-name-to-rsid-conversion.zip
+```
+
+copy **`PsychArray`** to **`illumina_manifest_csv`**
+
+```bash
+## PsychArray
+cd /media/Data/mega_array/iProductFiles/ussd-ftp.illumina.com/Downloads/ProductFiles/PsychArray
+ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
+cp -v PsychArray_A.csv ${ILM}
+cp -v v1-0/PsychArray-B.csv ${ILM}
+```
+
+List **`HumanOmniZhongHua-8`**
+
+```bash
+## HumanOmniZhongHua-8
+cd /media/Data/mega_array/iProductFiles/ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniZhongHua-8
+tree .
+```
+
+```
+.
+├── v1-0
+│   ├── HumanOmniZhongHua-8-v1-0-C-auxiliary-file.txt
+│   ├── HumanOmniZhongHua-8-v1-0-C-auxiliary-file.zip
+│   ├── HumanOmniZhongHua-8-v1-0-C.bpm
+│   ├── HumanOmniZhongHua-8-v1-0-C.csv
+│   ├── HumanOmniZhongHua-8-v1-0-C-mapping-comments.txt
+│   ├── HumanOmniZhongHua-8-v1-0-C-mapping-comments.zip
+│   ├── HumanOmniZhongHua-8-v1-0-C-prior-product-modifications.txt
+│   └── HumanOmniZhongHua-8-v1-0-C-prior-product-modifications.zip
+├── v1-1
+│   ├── HumanOmniZhongHua-8-v1-1-B-auxiliary-file.txt
+│   ├── HumanOmniZhongHua-8-v1-1-B-auxiliary-file.zip
+│   ├── HumanOmniZhongHua-8-v1-1-B.bpm
+│   ├── HumanOmniZhongHua-8-v1-1-B.csv
+│   ├── HumanOmniZhongHua-8-v1-1-B-mapping-comments.txt
+│   ├── HumanOmniZhongHua-8-v1-1-B-mapping-comments.zip
+│   ├── HumanOmniZhongHua-8-v1-1-B-prior-product-modifications.txt
+│   ├── HumanOmniZhongHua-8-v1-1-B-prior-product-modifications.zip
+│   ├── humanomnizhonghua-8-v1-1-cluster-file.zip
+│   └── humanomnizhonghua-8-v1-1-lims-product-descriptor-file-15045826-a.zip
+└── v1-2
+    ├── humanomnizhonghua-8-v1-2-a-manifest-file-bpm.zip
+    ├── humanomnizhonghua-8-v1-2-a-manifest-file-csv.zip
+    ├── humanomnizhonghua-8-v1-2-cluster-file.zip
+    ├── humanomnizhonghua-8-v1-2-demo-data-12-samples.zip
+    ├── humanomnizhonghua-8-v1-2-demo-sample-sheet-12-samples.zip
+    ├── humanomnizhonghua-8-v1-2-file-for-ucsc-browser-bed.zip
+    ├── humanomnizhonghua-8-v1-2-gene-annotation.zip
+    ├── humanomnizhonghua-8-v1-2-lims-product-descriptor-15053792-a.zip
+    ├── humanomnizhonghua-8-v1-2-loci-name-to-rsid-conversion.zip
+    ├── humanomnizhonghua-8-v1-2-locus-report.zip
+    ├── humanomnizhonghua-8-v1-2-mapping-comments.zip
+    ├── humanomnizhonghua-8-v1-2-population-reports-full.zip
+    ├── humanomnizhonghua-8-v1-2-population-reports-maf-copy-numbers.zip
+    ├── humanomnizhonghua-8-v1-2-reproducibility-and-heritability-report.zip
+    ├── humanomnizhonghua-8-v1-2-strand-report-fdt.zip
+    ├── humanomnizhonghua-v1-2-vs-v1-1-legacy-overlap.zip
+    └── humanomnizhonghua-v1-2-vs-v1-1-missing-legacy-snps.zip
+
+```   
+
+copy **`HumanOmniZhongHua-8`** to **`illumina_manifest_csv`**
+
+```bash
+## HumanOmniZhongHua-8
+cd /media/Data/mega_array/iProductFiles/ussd-ftp.illumina.com/Downloads/ProductFiles/HumanOmniZhongHua-8
+ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
+cp -v v1-0/HumanOmniZhongHua-8-v1-0-C.csv ${ILM}
+cp -v v1-1/HumanOmniZhongHua-8-v1-1-B.csv ${ILM}
+cp -v v1-2/humanomnizhonghua-8-v1-2-a-manifest-file-csv.zip ${ILM} && \
+unzip ${ILM}/humanomnizhonghua-8-v1-2-a-manifest-file-csv.zip && \
+rm ${ILM}/humanomnizhonghua-8-v1-2-a-manifest-file-csv.zip
+
+```
+
+Now move to `${ILM}` and run make fasta....bwa etc
+
+I effed up and deleted a bunch of stuff...so running the whole thing again...
+
+```bash
+## where me scripts are
+SRC="/media/Data/mega_array/illumina-probe-mappings/illumina-array-protocols/bin"
+
+## where the manifests are
+ILM="/media/Data/mega_array/illumina-probe-mappings/illumina_manifest_csv"
+
+## make sure we are in the right dir
+cd ${ILM}
+
+## list files
+FILES=`ls | grep .csv$`
+
+## Do it all one time...
+for i in ${FILES}
+do
+
+## make fasta files
+echo -e "\n\n>>>>>>>>>> Make Fasta >>>>>>>>>>\n\n"
+	${SRC}/make-fasta-from-annotation-csv.sh ${i} && mv -v *probe* ../fasta
+	
+## make update alleles file
+echo -e "\n\n>>>>>>>>>> Make Update Alleles >>>>>>>>>>\n\n"
+	${SRC}/create_update_allele_file.sh ${i} && mv -v *update* ../update_alleles_files	
+## bwa aln
+echo -e "\n\n>>>>>>>>>> BWA Aligning Sh!t >>>>>>>>>>\n\n"
+	${SRC}/aln-fasta-bwa.sh ${i} ../ref_genome/human_g1k_v37.fasta 32
+
+done 
+```
+
+
+## Thoughts on BPM only Data
+Illumina are either lazy or forgetful or these are "special" and Illumina, with their 
+collaboratotrs, don not want to share the data.
 
 *************
 
