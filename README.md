@@ -991,17 +991,17 @@ do
 ## make fasta files
 echo -e "\n\n>>>>>>>>>> Make Fasta >>>>>>>>>>\n\n"
 
-	${SRC}/make-fasta-from-annotation-csv.sh ${i} && mv -v *probe* ../fasta
+	time ${SRC}/make-fasta-from-annotation-csv.sh ${i} && mv -v *probe* ../fasta
 	
 ## make update alleles file
 echo -e "\n\n>>>>>>>>>> Make Update Alleles >>>>>>>>>>\n\n"
 
-	${SRC}/create_update_allele_file.sh ${i} && mv -v *update* ../update_alleles_files
+	time ${SRC}/create_update_allele_file.sh ${i} && mv -v *update* ../update_alleles_files
 		
 ## bwa aln
 echo -e "\n\n>>>>>>>>>> BWA Aligning Sh!t >>>>>>>>>>\n\n"
 
-	${SRC}/aln-fasta-bwa.sh ${i} ../ref_genome/human_g1k_v37.fasta 32
+	time ${SRC}/aln-fasta-bwa.sh ${i} ../ref_genome/human_g1k_v37.fasta 32
 
 done 
 ```
