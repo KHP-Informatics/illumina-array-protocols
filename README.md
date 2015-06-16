@@ -1346,16 +1346,7 @@ sed -e 's/-ilmprb-/\t/g' > ${ARRAY}.probe_mapping
 awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
 ```
 
-
-```bash
-## doing it with samtools
-samtools view -S -q 0 ${ARRAY}.sam | \
-awk 'BEGIN{OFS="\t";} {print $1, $3, $4, $6, $10}' | sed -e 's/-ilmprb-/\t/g' | \
-awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
-```
-
-
-
+**Count N VAR Orginal**
 
 ```bash
 ## Count N VAR Orginal
