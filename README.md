@@ -1138,11 +1138,104 @@ MEGA_Consortium_15063755_B2.sam.flagstat ## Flagstats
 MEGA_Consortium_15063755_B2.txt ## Annotation File (remove Illumina header and tail)
 ```
 
+Focus **`ARRAY="MEGA_Consortium_15063755_B2"`**
+
+```bash
+## Array Name
+ARRAY="MEGA_Consortium_15063755_B2"
+
+## count CIGAR top 20
+awk '{print $6}' ${ARRAY}.sam | sort | uniq -c | sort -grk1 | head -20
+```
+
+```
+2460169 50M
+   6528 45M5H
+   6492 5H45M
+   5794 4H46M
+   5786 46M4H
+   4764 3H47M
+   4760 10H40M
+   4742 40M10H
+   4651 47M3H
+   4321 41M9H
+   4257 9H41M
+   4063 8H42M
+   4029 42M8H
+   3939 48M2H
+   3860 2H48M
+   3560 20H30M
+   3534 30M20H
+   3492 7H43M
+   3435 14H36M
+   3430 15H35M
+```
+
+Note hard clipping (H) 
+
+```bash
+grep -w "45M5H" ${ARRAY}.sam | head
+```
+
+```
+JHU_7.128268062-1_T_R_2236780463-ilmprb-JHU_7.128268062 256     1       157146  0       45M5H   *       0       0       *       *       NM:i:1  MD:Z:27G17      AS:i:40 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_15.102428433-1_B_F_2226976652-ilmprb-JHU_15.102428433       256     1       379890  0       45M5H   *       0       0       *       *       NM:i:0  MD:Z:45 AS:i:45 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_7.128268062-1_T_R_2236780463-ilmprb-JHU_7.128268062 256     1       692832  0       45M5H   *       0       0       *       *       NM:i:1  MD:Z:27G17      AS:i:40 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_6.151966-1_B_F_2232450143-ilmprb-JHU_6.151966       256     1       803082  0       45M5H   *       0       0       *       *       NM:i:2  MD:Z:11G7G25    AS:i:35 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+rs676417-131_T_F_1891380557-ilmprb-rs676417     256     1       1043230 0       45M5H   *       0       0       *       *       NM:i:2  MD:Z:0G38A5     AS:i:39 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_1.1161742-1_T_F_2245137316-ilmprb-JHU_1.1161742     256     1       1161756 0       45M5H
+```
+
+Grep CIGAR string **`50M`**
+
+```bash
+grep -w "50M" ${ARRAY}.sam | head
+```
+
+```
+HU_12.92809-1_B_F_2243580166-ilmprb-JHU_12.92809       272     1       12804   0       50M     *       0       0       *       *       NM:i:2  MD:Z:3C30T15    AS:i:41 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_12.92723-1_T_F_2243580162-ilmprb-JHU_12.92723_PobeA 272     1       12889   0       50M     *       0       0       *       *       NM:i:1  MD:Z:21G28      AS:i:45 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_12.92723-1_T_F_2243580162-ilmprb-JHU_12.92723_PobeB 1296    1       12889   0       50M     *       0       0       *       *       NM:i:2  MD:Z:0G20G28    AS:i:44 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_12.92436-1_B_R_2243580153-ilmprb-JHU_12.92436       256     1       13126   0       50M     *       0       0       *       *       NM:i:3  MD:Z:12T19G1A15 AS:i:35 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_2.114357511-1_T_R_2227997727-ilmprb-JHU_2.114357511 256     1       13454   0       50M     *       0       0       *       *       NM:i:2  MD:Z:5C13T30    AS:i:40 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_12.91677-1_B_F_2243580132-ilmprb-JHU_12.91677       272     1       13936   0       50M     *       0       0       *       *       NM:i:3  MD:Z:10G25C7T5  AS:i:35 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_15.102514230-1_B_F_2226977142-ilmprb-JHU_15.102514230_PobeA 272     1       16932   0       50M     *       0       0       *       *       NM:i:2  MD:Z:13G22C13   AS:i:40 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+JHU_15.102514230-1_B_F_2226977142-ilmprb-JHU_15.102514230_PobeB 1296    1       16932   0       50M     *       0       0       *       *       NM:i:3  MD:Z:0C12G22C13 AS:i:39 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+9:17124-GA-0_T_F_2299865180-ilmprb-9:17124-GA   256     1       16963   0       50M     *       0       0       *       *       NM:i:2  MD:Z:41C0A7     AS:i:41 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+9:17085-CT-0_T_R_2299865177-ilmprb-9:17085-CT   272     1       16975   0       50M     *       0       0       *       *       NM:i:2  MD:Z:29C0A19    AS:i:40 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+
+```
+
+Note, many have no sequence and are not primary mapping
 
 
+Grep CIGAR string **`50M`** and QUAL `>0`
 
+```bash
+grep -w "50M" ${ARRAY}.sam | awk '$5>0' | wc -l 
+grep -w "50M" ${ARRAY}.sam | awk '$5>0' | head
 
+## doing it with samtools
+samtools view -S -q 0 ${ARRAY}.sam | \
+awk 'BEGIN{OFS="\t";} {print $1, $3, $4, $6, $10}' | sed -e 's/-ilmprb-/\t/g' | \
+awk '{print $1}' | sort | uniq -c | sort -grk1 | head -20
+```
 
+```bash
+## Count N VAR Orginal
+NVAR_ORIGINAL=`wc -l ${ARRAY}.txt | awk '{print $1-1}'` && \
+echo -e "Number or Variants in ${ARRAY}: ${NVAR_ORIGINAL}"
+```
+
+```
+Number or Variants in MEGA_Consortium_15063755_B2: 1705969
+```
+
+```bash
+## Get good qual mapped reads
+samtools view -S -q 20 ${ARRAY}.sam | \
+awk '{print $6}'| sort | uniq -c | sort -grk1 | head -20
+```
 
 
 *************
