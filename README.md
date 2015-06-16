@@ -1265,7 +1265,7 @@ A:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG`
 M:`||||||||||||||||||||||||||||||||||||||||||||||||||`  
 B:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC`
 
-Seq looks the same....BLAT...  
+Seq looks the same. Now lets BLAT it.   
 
 **BLAT Search Results**  
 **BLAT: http://genome.ucsc.edu/cgi-bin/hgBlat**
@@ -1284,6 +1284,52 @@ browser details YourSeq           48     1    50    50  98.0%     1   -  1155600
 browser details YourSeq           48     1    50    50  98.0%     2   +  146542664 146542713     50
 browser details YourSeq           47     3    49    50 100.0%     X   -   67600656  67600702     47
 ```
+
+**UCSC Mapping of SNP with ID rs4413915**
+
+**`rs4413915 at chrX:80284854-80285354`**
+
+The BLAT mapping Looks ok - the top hit matches the annotations -  but, the fact is, that this is not a unique hit. BWA maps the full length of this sequence (CIGAR 50M) `>500` times. 
+
+Note, Probe A and B sequences were taken from Illumina's data file. Really, this is one read/sequence (another oversight - or my mistake?).  
+
+Getting counts of the chromosomes this probe hits.
+
+```bash
+grep "rs4413915-138_T_F_2304127707" ${ARRAY}.sam | awk '{print $3}' | sort | uniq -c | \
+sort -rgk1
+```
+
+Chr X is top hit (most frequent chromosome probe is mapped to). 
+
+```
+    118 X
+    101 4
+    100 2
+     97 1
+     85 3
+     61 11
+     58 6
+     58 5
+     51 10
+     47 8
+     47 7
+     46 12
+     30 14
+     30 13
+     26 9
+     26 18
+     26 15
+     17 20
+     17 16
+     15 Y
+     14 19
+     13 17
+      9 21
+```
+
+Should we trust these variants? I do not think so.
+
 
 **now make a file**
 
