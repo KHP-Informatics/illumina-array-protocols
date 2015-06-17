@@ -1366,13 +1366,15 @@ awk '{print $6}'| sort | uniq -c | sort -grk1 | head -20
 
 **Probe Seq Unique or Not?**
 
-At most a sequence should only appear twice.
+At most a sequence should only appear twice?m (Probe A and B are the same sometimes). 
 
 ```bash
 ## Probe A seq counts
 awk -F, 'BEGIN{OFS="\t";} {print $7}' MEGA_Consortium_15063755_B2.txt | \
 sort | uniq -c | sort -grk1 | head
 ```
+
+Probes appear multiple times
 
 ```
       8 AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG
@@ -1386,6 +1388,8 @@ sort | uniq -c | sort -grk1 | head
       3 GAGTACCTCATCTTATTCCCTGCCTGAATCTGCTGTTTTCTTCTGCAGCC
       3 GAGATGAAAACAGGCGCACCAAGAACATGCCTCAGGGCTCATTTCCATCA
 ```      
+
+looking at the most frequent hit `AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG`
 
 ```bash
 grep -w AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG MEGA_Consortium_15063755_B2.txt | \
@@ -1404,10 +1408,19 @@ awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 
 ```
 
+We checked for the string `19:45411941` in an GenomeStudio project and found a lot 
+of other variants with the same prefix.   
+
+Now looking for `19:45411941` in the annotation file.
+
 ```bash
 grep -w 19:45411941 MEGA_Consortium_15063755_B2.txt | \
 awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 ```
+
+The following is what we find. These all match GenomeStudio annotations.  
+These all have the same cluster pattern (all Homozygous A).
+This looks like the same variant represented 21 times. 
 
 
 ```
@@ -1433,6 +1446,7 @@ awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 19:45411941-T-C-F7-0_B_F_2304705786     19:45411941-T-C-F7      BOT     [T/C]   0002726194      AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG
 19:45411941-T-C-F9-0_B_F_2304705790     19:45411941-T-C-F9      BOT     [T/C]   0068668877      AGGAGCTGCAGGCGGCGCAGGCCCGGCTAGGCGCGGACATGGAGGACGTG
 ```
+
 
 ![19:45411941 BLAT](./figs/chr-19-45411941-blat.png)
 
