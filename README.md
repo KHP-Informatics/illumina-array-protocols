@@ -1364,9 +1364,11 @@ samtools view -S -q 20 ${ARRAY}.sam | \
 awk '{print $6}'| sort | uniq -c | sort -grk1 | head -20
 ```
 
-**Probe Seq Unique or Not?**
+### Is the Probe Seq Unique or Not?
 
-At most a sequence should only appear twice?m (Probe A and B are the same sometimes). 
+At most a sequence should only appear twice? (Probe A and B are the same sometimes). 
+
+Counting the number of time Probe A sequence occurs in the annotation file:   
 
 ```bash
 ## Probe A seq counts
@@ -1478,6 +1480,8 @@ grep -w TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT MEGA_Consortium_15063
 awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 ```
 
+#### Same probe sequence, different names
+
 ```
 JHU_14.83197666-1_T_R_2222134330        JHU_14.83197666 TOP     [A/T]   0001643920      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTA      0037618859      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
 rs116745907-138_T_R_2297106218  rs116745907     TOP     [A/T]   0003733361      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTA      0087762158      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
@@ -1496,8 +1500,9 @@ In GenomeStudio, these two variants have identical clusters. **They are the exac
 A Plan of attack...
 
 When a GenomeStudio project is created the user has the option to `zero` out variants 
-that we have determined to be problematic. These are variants that are redundant, duplicated
-and/or variants where the associated probe sequence(s) does not uniquely map back to the reference genome. 
+that we have determined to be problematic. 
+
+These are variants that are duplicated and/or variants where the associated probe sequence(s) does not uniquely map back to the reference genome. 
 
 Removing these variants will speed up clustering times and improve SNP and Sample call rates.
 More importantly, the end user is then not faced with analysing un-reliable data. 
@@ -1509,11 +1514,11 @@ We plan on interesting these lists if un-reliable variants with GWAS hits. In th
 We need to build into the pipeline a method to detect and/or flag these 
 variants for removal, either, before or after the GenomeStudio stage.  
 
-- A variant that is represented more than once, but given a different Illumina Id.
+- A variant that is represented more than once, but given a different Illumina identifier.
     - same probe sequence
     - different Illumina identifier string either `IlmnID` or `Name`
 - A variant whose probe sequence maps more than once to the reference genome
-    - Probe A and or Probe B have CIGAR 50M and map > 1
+    - Probe A and or Probe B have `CIGAR == 50M` and map `> 1`
     - check that variant is not counted twice : where Probe A == Probe B 
 
 
