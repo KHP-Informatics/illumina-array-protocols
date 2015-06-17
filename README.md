@@ -1471,9 +1471,16 @@ Pronbe B sequence duplication is not as bad as Probe A
       2 TTTTTGGCTTATCCTACTAGTGTGTCTTTTCACAAATATAACCAAATTCT
 ```
 
-## Illumina Probes and Variants 
+## Bad Illumina Probes and Variants 
 
-A plan of attak
+A Plan of attack...
+
+When a GenomeStudio project is created the user has the option to `zero` out variants 
+that we have determined to be problematic. These are variants that are redundant, duplicated
+and/or variants where the associated probe sequence(s) does not uniquely map back to the reference genome. 
+
+Removing these variants will speed up clustering times and improve SNP and Sample call rates.
+More importantly, the end user is then not faced with analysing un-reliable data.
 
 #### TO ADD TO PIPELINE 
 We need to build into the pipeline a method to detect and/or flag these 
@@ -1486,12 +1493,6 @@ variants for removal, either, before or after the GenomeStudio stage.
     - Probe A and or Probe B have CIGAR 50M and map > 1
     - check that variant is not counted twice : where Probe A == Probe B 
 
-
-```bash
-## Probe B seq counts
-awk -F, 'BEGIN{OFS="\t";} {print $9}' MEGA_Consortium_15063755_B2.txt | \
-sort | uniq -c | sort -grk1 | head
-```
 
 
 *************
