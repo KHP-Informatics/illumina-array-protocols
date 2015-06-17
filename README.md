@@ -1262,10 +1262,12 @@ Hits CHR 1:89793532 and 3:133402777
 The sequence...
 
 A:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG`  
-M:`||||||||||||||||||||||||||||||||||||||||||||||||||`  
+M:`|||||||||||||||||||||||||||||||||||||||||||||||||*`  
 B:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC`
 
-Seq looks the same. Now lets BLAT it.   
+Probe A and B differ by the terminal base. 
+
+Now lets BLAT it.   
 
 **BLAT Search Results**  
 **BLAT: http://genome.ucsc.edu/cgi-bin/hgBlat**
