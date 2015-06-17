@@ -1348,7 +1348,8 @@ multi-mapping probes. Unless, Illumina protocols and methods are **PERFECT**
 and error free. 
 
 
-**now make a file**
+**now make a file**  
+Smaller file, stripping unwanted columns from `SAM`
 
 ```bash
 ## 1. Full length of Probes maps to genome CIGAR 50M
@@ -1425,7 +1426,7 @@ awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 
 ```
 
-We checked for the string **`19:45411941`** in an GenomeStudio project and found a lot 
+We checked for the string **`19:45411941`** in a GenomeStudio project and found a lot 
 of other **variants with the same prefix.**   
 
 Now looking for **`19:45411941`** in the annotation file.
