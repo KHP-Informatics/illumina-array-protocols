@@ -1257,7 +1257,10 @@ rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeB     0       1       89793532
 rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeA     0       3       133402777       0       50M     *       0       0       ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC      *       NM:i:0  MD:Z:50 AS:i:50 XS:i:50 XR:Z:dna:chromosome chromosome:GRCh37:3:1:198022430:1
 ```
 
-Hits CHR 1:89793532 and 3:133402777
+Hits the genome at  
+
+- **1:89793532**   
+- **3:133402777**  
 
 The sequence...
 
@@ -1266,6 +1269,16 @@ M:`|||||||||||||||||||||||||||||||||||||||||||||||||*`
 B:`ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC`
 
 Probe A and B differ by the terminal base. 
+
+```bash
+grep -w ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG MEGA_Consortium_15063755_B2.sam
+grep -w ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC MEGA_Consortium_15063755_B2.sam
+```
+
+```
+rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeB     0       1       89793532        0       50M     *       0       0       ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAG      *       NM:i:1  MD:Z:49C0       AS:i:49 XS:i:49 XR:Z:dna:chromosome chromosome:GRCh37:1:1:249250621:1
+rs4413915-138_T_F_2304127707-ilmprb-rs4413915_PobeA     0       3       133402777       0       50M     *       0       0       ATTGACCACATAGTTGGAAGTAAAGCTCTACTCAGCAAATGTAAAAGAAC      *       NM:i:0  MD:Z:50 AS:i:50 XS:i:50 XR:Z:dna:chromosome chromosome:GRCh37:3:1:198022430:1
+```
 
 Now lets BLAT it.   
 
@@ -1292,8 +1305,6 @@ browser details YourSeq           47     3    49    50 100.0%     X   -   676006
 **`rs4413915 at chrX:80284854-80285354`**
 
 The BLAT mapping Looks ok - the top hit matches the annotations -  but, the fact is, that this is not a unique hit. BWA maps the full length of this sequence (CIGAR 50M) `>500` times. 
-
-Note, Probe A and B sequences were taken from Illumina's data file. Really, this is one read/sequence (another oversight - or my mistake?).  
 
 Getting counts of the chromosomes this probe hits.
 
