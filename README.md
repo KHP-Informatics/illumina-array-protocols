@@ -1471,6 +1471,26 @@ Pronbe B sequence duplication is not as bad as Probe A
       2 TTTTTGGCTTATCCTACTAGTGTGTCTTTTCACAAATATAACCAAATTCT
 ```
 
+looking at the most frequent hit `TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT `
+
+```bash
+grep -w TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT MEGA_Consortium_15063755_B2.txt | \
+awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
+```
+
+```
+JHU_14.83197666-1_T_R_2222134330        JHU_14.83197666 TOP     [A/T]   0001643920      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTA      0037618859      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
+rs116745907-138_T_R_2297106218  rs116745907     TOP     [A/T]   0003733361      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTA      0087762158      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
+```
+
+Here (above), the probe sequence `TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT`
+is seen twice in the annotation file.
+
+This probde is assigned to two different variant names `JHU_14.83197666` and `rs116745907`.
+
+In GenomeStudio, these two variants have identical clusters. **They are the exact same variant.**
+
+
 ## Bad Illumina Probes and Variants 
 
 A Plan of attack...
@@ -1480,7 +1500,10 @@ that we have determined to be problematic. These are variants that are redundant
 and/or variants where the associated probe sequence(s) does not uniquely map back to the reference genome. 
 
 Removing these variants will speed up clustering times and improve SNP and Sample call rates.
-More importantly, the end user is then not faced with analysing un-reliable data.
+More importantly, the end user is then not faced with analysing un-reliable data. 
+
+#### Do these probes represent any published GWAS findings?
+We plan on interesting these lists if un-reliable variants with GWAS hits. In the hope, that non of the reported hits are from probes/variants that should have never made it into the final analyses. 
 
 #### TO ADD TO PIPELINE 
 We need to build into the pipeline a method to detect and/or flag these 
