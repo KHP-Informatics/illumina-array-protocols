@@ -1424,12 +1424,7 @@ grep -w 19:45411941 MEGA_Consortium_15063755_B2.txt | \
 awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 ```
 
-The following (below) is what we find.  
- 
-- These all match GenomeStudio annotations.    
-- These all have the same cluster pattern (all Homozygous A).  
-- This looks like the same variant represented 21 times.   
-
+The following (below) is what we see.  
 
 ```
 19:45411941-A-G-0_B_F_2304705815        19:45411941-A-G BOT     [T/C]   0068697136      AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG
@@ -1455,9 +1450,21 @@ The following (below) is what we find.
 19:45411941-T-C-F9-0_B_F_2304705790     19:45411941-T-C-F9      BOT     [T/C]   0068668877      AGGAGCTGCAGGCGGCGCAGGCCCGGCTAGGCGCGGACATGGAGGACGTG
 ```
 
-### UCSC BLAT 19:45411941* sequence
+- These all match the GenomeStudio annotations/names.    
+- These all have the same cluster pattern (all Homozygous A).  
+- This looks like the same variant represented 21 times and given slightly different names
+
+**This IS the same variant represented 21 times**
+
+#### UCSC BLAT 19:45411941* sequence
 
 ![19:45411941 BLAT](./figs/chr-19-45411941-blat.png)
+
+**This is actually `dbSNP build 142: rs429358`**
+
+This is not an isolated case, but an example of many. User's would benefit from  re-annotating
+Illumina variants using current SNP data bases.
+
 
 **Looking at Probe B sequences**
 
