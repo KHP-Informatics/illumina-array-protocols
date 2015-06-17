@@ -1270,7 +1270,7 @@ Probe A and B differ by the terminal base.
 Now lets BLAT it.   
 
 **BLAT Search Results**  
-**BLAT: http://genome.ucsc.edu/cgi-bin/hgBlat**
+BLAT: http://genome.ucsc.edu/cgi-bin/hgBlat
 
 Just look. This is a snap shot of the results. This probe hits multiple regions. 
 
@@ -1393,6 +1393,8 @@ Probes appear multiple times
       3 GAGATGAAAACAGGCGCACCAAGAACATGCCTCAGGGCTCATTTCCATCA
 ```      
 
+### BAD: Same probe A sequence, different names
+
 looking at the most frequent hit `AGGAGCTGCAGGCGGCGCAGGCCCGGCTGGGCGCGGACATGGAGGACGTG`
 
 ```bash
@@ -1412,19 +1414,21 @@ awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 
 ```
 
-We checked for the string `19:45411941` in an GenomeStudio project and found a lot 
-of other variants with the same prefix.   
+We checked for the string **`19:45411941`** in an GenomeStudio project and found a lot 
+of other **variants with the same prefix.**   
 
-Now looking for `19:45411941` in the annotation file.
+Now looking for **`19:45411941`** in the annotation file.
 
 ```bash
 grep -w 19:45411941 MEGA_Consortium_15063755_B2.txt | \
 awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 ```
 
-The following is what we find. These all match GenomeStudio annotations.  
-These all have the same cluster pattern (all Homozygous A).
-This looks like the same variant represented 21 times. 
+The following (below) is what we find.  
+ 
+- These all match GenomeStudio annotations.    
+- These all have the same cluster pattern (all Homozygous A).  
+- This looks like the same variant represented 21 times.   
 
 
 ```
@@ -1455,13 +1459,15 @@ This looks like the same variant represented 21 times.
 
 ![19:45411941 BLAT](./figs/chr-19-45411941-blat.png)
 
+**Looking at Probe B sequences**
+
 ```bash
 ## Probe B seq counts
 awk -F, 'BEGIN{OFS="\t";} {print $9}' MEGA_Consortium_15063755_B2.txt | \
 sort | uniq -c | sort -grk1 | head
 ```
 
-Pronbe B sequence duplication is not as bad as Probe A
+Probe B sequence duplication is not as bad as Probe A
 
 ```
       2 TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
@@ -1482,7 +1488,7 @@ grep -w TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT MEGA_Consortium_15063
 awk -F, 'BEGIN{OFS="\t";} {print $2,$3,$4,$5,$6,$7,$8,$9}'
 ```
 
-#### Same probe sequence, different names
+#### BAD: Same probe sequence, different names
 
 ```
 JHU_14.83197666-1_T_R_2222134330        JHU_14.83197666 TOP     [A/T]   0001643920      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTA      0037618859      TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
