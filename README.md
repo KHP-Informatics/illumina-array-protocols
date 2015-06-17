@@ -1447,10 +1447,44 @@ This looks like the same variant represented 21 times.
 19:45411941-T-C-F9-0_B_F_2304705790     19:45411941-T-C-F9      BOT     [T/C]   0068668877      AGGAGCTGCAGGCGGCGCAGGCCCGGCTAGGCGCGGACATGGAGGACGTG
 ```
 
+### UCSC BLAT 19:45411941* sequence
 
 ![19:45411941 BLAT](./figs/chr-19-45411941-blat.png)
 
+```bash
+## Probe B seq counts
+awk -F, 'BEGIN{OFS="\t";} {print $9}' MEGA_Consortium_15063755_B2.txt | \
+sort | uniq -c | sort -grk1 | head
+```
 
+Pronbe B sequence duplication is not as bad as Probe A
+
+```
+      2 TTTTTTTTTTAAGTCAATACTTCTTAGTTTATTTACCTATCTATTTTTTT
+      2 TTTTTTTTTCTCCACGCCACAGAACTGCTGCTGGGGGGAGGGGGATGGGA
+      2 TTTTTTCTGACTATGTCTGAGTAAAAACAGATCTAGGCTTAGTTGAATTA
+      2 TTTTTTCCCCAGTTTTTCTGGGTTGTCATCTCTGTGCTTTTACTCTACGG
+      2 TTTTTTAGAATACGTTCTCAGAATTGGGACTTCCAGGTCAATGGCTATGA
+      2 TTTTTTAATGCAACATCTCTATGGAAAGAAAAGAAAACTACTGAAAGGAT
+      2 TTTTTTAACCTTATTTGACCTTGCGACTTTACAAATCATTGCTGGACTTC
+      2 TTTTTGTGGGACCTTGGCTGGGTCATTTTCATTGCTCAGGCCTGTTTTCG
+      2 TTTTTGGCTTATCCTACTAGTGTGTCTTTTCACAAATATAACCAAATTCT
+```
+
+## Illumina Probes and Variants 
+
+A plan of attak
+
+#### TO ADD TO PIPELINE 
+We need to build into the pipeline a method to detect and/or flag these 
+variants for removal, either, before or after the GenomeStudio stage.  
+
+- A variant that is represented more than once, but given a different Illumina Id.
+    - same probe sequence
+    - different Illumina identifier string either `IlmnID` or `Name`
+- A variant whose probe sequence maps more than once to the reference genome
+    - Probe A and or Probe B have CIGAR 50M and map > 1
+    - check that variant is not counted twice : where Probe A == Probe B 
 
 
 ```bash
