@@ -1521,8 +1521,22 @@ This probde is assigned to two different variant names `JHU_14.83197666` and `rs
 
 In GenomeStudio, these two variants have identical clusters. **They are the exact same variant.**
 
+## Same Chromosome Same Base Pair Position 
 
-## Bad Illumina Probes and Variants 
+Looking at the `.csv` annotation and GenomeStudio Projects, there are  a number of variants 
+that have the same `Chr` and `MapInfo`, but given unique `IlmnID` and `Name`. These observations are backed up by the BWA mappings of the probe sequences. 
+
+
+The `.csv` and `.bpm` can be used to identify these variants. 
+
+
+```bash
+ddd
+```
+
+
+
+## What to do About Bad Illumina Probes and Variants 
 
 A Plan of attack...
 
