@@ -1531,9 +1531,26 @@ The `.csv` and `.bpm` can be used to identify these variants.
 
 
 ```bash
-ddd
+awk -F, 'BEGIN{OFS="\t";} {print $11":"$12}' MEGA_Consortium_15063755_B2.txt | \
+sort | uniq -c | sort -grk1 | head
 ```
 
+```
+     21 19:45411941
+     17 X:0
+      3 Y:9989615
+      3 Y:6868118
+      3 X:67652748
+      3 X:153764217
+      3 9:99537071
+      3 9:131846957
+      3 8:70588878
+```
+
+```bash
+awk -F, 'BEGIN{OFS="\t";} {print $11":"$12":"$4":"$5}' MEGA_Consortium_15063755_B2.txt | \
+sort | uniq -c | sort -grk1 | head
+```
 
 
 ## What to do About Bad Illumina Probes and Variants 
