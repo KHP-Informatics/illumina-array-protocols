@@ -1535,6 +1535,9 @@ awk -F, 'BEGIN{OFS="\t";} {print $11":"$12}' MEGA_Consortium_15063755_B2.txt | \
 sort | uniq -c | sort -grk1 | head
 ```
 
+**Counts of Chr:
+MapInfo**
+
 ```
      21 19:45411941
      17 X:0
